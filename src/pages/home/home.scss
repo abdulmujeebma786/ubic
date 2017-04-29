@@ -1,0 +1,31 @@
+page-home {
+
+}
+.toolbar-background {
+    background: #353344;
+}
+.toolbar-title {
+    color: white!important;
+}
+.bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
+    color: white;
+}
+
+.home-content .table-bordered[_ngcontent-c1]{
+
+    font-size: 17px;
+}
+
+td, th{
+    border: none!important;
+}
+
+.event-detail-container[_ngcontent-c0] {
+    border: none;
+}
+
+.home-content .table-bordered[_ngcontent-c1] {
+    background-image: url(../assets/img/calender_back.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

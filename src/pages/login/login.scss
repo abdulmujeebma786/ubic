@@ -1,0 +1,27 @@
+.login-logo {
+  padding: 60px;
+}
+
+.list-ios > .item-block:first-child {
+  border-top: none;
+}
+
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+  border-bottom: none;
+}
+.submit-button {
+  width: 60%;
+  background: #353344;
+}
+.list list-ios {
+  padding: 25px;
+}
+
+.item-inner {
+  border-bottom: 0.55px solid #c8c7cc!important;
+}
+
+.list-md .item-input.input-has-focus:last-child {
+    border-bottom-color:none; 
+    box-shadow: none
+}

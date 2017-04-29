@@ -1,0 +1,86 @@
+<ion-content padding class="body-details-content">
+
+    <h4 center padding>Lets know about your body</h4>
+
+    <ion-grid>
+        <ion-row class="radio-row">
+            <ion-col col-5 center> <span class="text-A">I am a </span></ion-col>
+            <ion-col col-7>
+                <div class="radio-text"><input type="radio" ng-model="Bodydetails.gender" name='m' value="man"> Man</div>
+                <div class="radio-text"> <input name='m' ng-model="Bodydetails.gender" type="radio" value="woman"> Woman</div>
+            </ion-col>
+        </ion-row>
+        <ion-row padding-top>
+            <ion-col col-5 center>Current Weight</ion-col>
+            <ion-col col-5 class="input-styles">
+                <ion-input type="number" ></ion-input>
+            </ion-col>
+            <ion-col col-2>kg</ion-col>
+        </ion-row>
+
+        <ion-row padding-top>
+            <ion-col col-5 center>Current Height</ion-col>
+            <ion-col col-5 class="input-styles">
+                <ion-input type="number" ></ion-input>
+            </ion-col>
+            <ion-col col-2>cms</ion-col>
+        </ion-row>
+
+        <ion-row padding-top>
+            <ion-col col-5 center>Birthday</ion-col>
+            <ion-col col-5 class="input-styles">
+                <ion-datetime displayFormat="MMM DD YYYY" min="{{minDate}}" max="{{maxDate}}"></ion-datetime>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="radio-row" padding-top>
+            <ion-col col-5 center> <span class="text-A">Orientation</span></ion-col>
+            <ion-col col-7>
+                <div class="radio-text"><input type="radio"  name='orientation' value="Vegetarian"> Vegetarian</div>
+                <div class="radio-text"> <input name='orientation'  type="radio" value="NonVegetarian"> Non Vegetarian</div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="radio-row" padding-top>
+            <ion-col col-5 center> <span class="text-A">Medical Condetions</span></ion-col>
+            <ion-col col-5 class="input-styles">
+                <ion-input type="text" readonly (click)="openPop()"></ion-input>
+            </ion-col>
+        </ion-row>
+
+        <div class="ranger-div-body">
+            <ion-row class="slider-row">
+                <ion-col *ngFor="let item of boxItems">
+                    <div  (click)="ChangeUserLevel(item.id)"></div>
+                </ion-col>
+            </ion-row>
+        </div>
+
+
+
+
+
+
+
+        <!--<div class="ranger-div-body">-->
+            <!--<div class="row slider-row">-->
+                <!--<div class="col" ng-repeat="item in boxItems" ng-class="{ 'slider-box-border' : activeBox == item.id }">-->
+                    <!--<div class="{{ item.class }}" ng-click="ChangeUserLevel(item.id)"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<p align="center">E.g. {{LevelUser}}</p>-->
+            <!--<label class="item btn-item">-->
+                <!--<button class="button button-block button-ubic" ng-click="submitBodyDetails(Bodydetails)">NEXT</button>-->
+            <!--</label>-->
+
+
+        <!--</div>-->
+
+
+    </ion-grid>
+
+    <div align="center" padding>
+        <button ion-button class="submit-button" (click)="submitBody()">Submit</button>
+    </div>
+
+</ion-content>

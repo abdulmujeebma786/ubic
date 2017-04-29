@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>SPECIAL EVENT</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="overview-content">
+    <ion-grid padding class="meals-grid">
+        <div padding align="center">What's your special Event?</div>
+        
+    </ion-grid>
+
+    <ion-grid class="meals-grid" padding>
+        <ion-row center class="target-weight">
+            <ion-col col-5>I WANT TO BE </ion-col>
+            <ion-col col-5>
+                <ion-input  class="target-input" type="number"></ion-input>
+            </ion-col>
+            <ion-col col-2>Kgm</ion-col>
+        </ion-row>
+        <ion-row center>
+            <ion-col col-5>TARGET DATE</ion-col>
+            <ion-col col-5>
+                <ion-datetime displayFormat="MMM DD YYYY" min="{{minDate}}" max="{{maxDate}}"></ion-datetime>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+     <div align="center" padding>
+        <button ion-button class="submit-button" (click)="SubmitMeals()">NEXT</button>
+    </div>
+</ion-content>

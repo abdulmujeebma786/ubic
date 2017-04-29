@@ -1,0 +1,86 @@
+.body-details-content .radio-text {
+  padding: 4px;
+}
+
+.body-details-content input[type='radio'] {
+  -webkit-appearance: none;
+  border: 1px solid darkgray !important;
+  border-radius: 50% !important;
+  outline: none !important;
+  vertical-align: bottom !important;
+  margin-right: 8px !important;
+}
+
+.body-details-content  input[type='radio']:before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 2px 2px;
+  border-radius: 50%;
+}
+
+.body-details-content  input[type='radio']:checked:before {
+  background: #353344;
+}
+
+.body-details-content .radio-row .text-A {
+
+}
+
+.body-details-content .input-styles {
+  border-bottom: 1px solid;
+  margin-top: -15px;
+  height: 37px;
+}
+
+.body-details-content .ranger-div-body {
+background: #E1F2FA; /* For browsers that do not support gradients */
+background: -webkit-linear-gradient(#fff, #eaeaef); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(#fff, #eaeaef); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#fff, #eaeaef); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#fff, #eaeaef); /* Standard syntax */
+padding-bottom: 27px;
+
+}
+
+.body-details-content .slider-row {
+  padding: 0px 43px;
+  margin: 26px 0px;
+}
+
+
+.slider-box-border {
+  background: #e8e7eb;
+  border-radius: 2px;
+}
+
+.body-details-content .slider-box {
+  height: 14px;
+  width: 46px;
+  margin: 5px auto;
+  box-shadow: 0px 3px 3px 0px #ccc;
+}
+.body-details-content .physical-Level{
+  padding-top: 18px;
+}
+
+.slider-row .box1 {
+  background: #D6DAE3;
+}
+
+.slider-row .box2 {
+  background: #B2CAE8;
+}
+
+.slider-row .box3 {
+  background: #75AEEC;
+}
+
+.slider-row .box4 {
+  background: #2F90EE;
+}
+
+.slider-row .box5 {
+  background: #047aed;
+}

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>CHOOSE PROGRAM</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="coach-content" >
+  <div class="Nutrition" (click)="regularDiet()">
+			<h3 ><b>REGULAR DIET</b></h3>
+			<p>Take our free diet program</p>
+		</div>
+
+		<!--*******************GET COACH*******************-->
+		<!--<div class="Coach" >-->
+		<!--<h3 ng-click="WorkoutPlanner()">SPECIAL EVENTS</h3>-->
+		<!--&lt;!&ndash;<h3 ng-click="GoToProgram()">COACH</h3>&ndash;&gt;-->
+		<!--<p ng-click="GoToProgram1()">Fast weight loss for life events</p>-->
+		<!--</div>-->
+
+		<!--******************SPECIAL EVENTS***************-->
+		<div class="Coach" (click)="specialEvent()">
+			<h3 ><b>SPECIAL EVENTS</b></h3>
+			<p>Fast weight loss for life events</p>
+		</div>
+</ion-content>

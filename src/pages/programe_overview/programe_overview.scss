@@ -1,0 +1,49 @@
+.overview-content .radio-text {
+  padding: 4px;
+}
+
+.overview-content input[type='radio'] {
+  -webkit-appearance: none;
+  border: 1px solid darkgray !important;
+  border-radius: 50% !important;
+  outline: none !important;
+  vertical-align: bottom !important;
+  margin-right: 8px !important;
+}
+
+.overview-content  input[type='radio']:before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 2px 2px;
+  border-radius: 50%;
+}
+
+.overview-content  input[type='radio']:checked:before {
+  background: #353344;
+}
+
+.overview-content .radio-row .text-A {
+
+}
+
+.overview-content .input-styles {
+  border-bottom: 1px solid;
+  margin-top: -15px;
+  height: 37px;
+}
+
+.meals-grid {
+    border-bottom: 1px solid #C9C9C9;
+	text-align: center;
+	// padding-bottom: 94px;
+	// padding-top: 94px;
+	/*background: linear-gradient(to bottom, rgb(223, 225, 230) 0%, rgb(231, 230, 236) 50%, rgba(176, 197, 255, 0.36) 51%, rgba(159, 236, 236, 0.69) 100%);*/
+	background: #fff; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#fff, #eaeaef); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#fff,#eaeaef); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#fff, #eaeaef); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#fff, #eaeaef); /* Standard syntax */
+
+}
