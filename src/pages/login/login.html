@@ -8,17 +8,17 @@
     <ion-list>
         <ion-item>
             <ion-label > <ion-icon name="person"></ion-icon></ion-label>
-            <ion-input type="text" placeholder="Username"></ion-input>
+            <ion-input type="text" [(ngModel)]="data.uname" placeholder="Username"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label > <ion-icon name="lock"></ion-icon></ion-label>
-            <ion-input type="password" placeholder="Password"></ion-input>
+            <ion-input type="password" [(ngModel)]="data.paswd" placeholder="Password"></ion-input>
         </ion-item>
 
     </ion-list>
     <div align="center">
-        <button ion-button class="submit-button" (click)="Login()" >LOGIN</button>
+        <button ion-button class="submit-button" (click)="Login(data)" >LOGIN</button>
     </div>
 
     <p align="center" (click)="OpenSignup()">Signup Here</p>

@@ -12,7 +12,7 @@ import { GoalPage } from '../goal/goal';
     templateUrl: 'login.html'
 })
 export class LoginPage {
-
+    data ={uname:'',paswd:''}
     constructor(public navCtrl: NavController) {
 
     }
@@ -25,8 +25,8 @@ export class LoginPage {
         this.navCtrl.push(forgetPasswordPage);
     }
 
-    Login() {
-
+    Login(data) {
+        console.log(this.data)
 
         this.navCtrl.push(GoalPage);
     }
