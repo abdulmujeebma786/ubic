@@ -4,6 +4,8 @@
 import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
+import { PlannerPage } from '../../pages/planner/planner';
+
 @Component({
     selector: 'programe-overview',
     templateUrl: 'programe_overview.html'
@@ -17,7 +19,7 @@ export class ProgrameOverviewPage {
     }
 
     SubmitMeals(){
-        // this.navCtrl.push(SpecialEventPage);
+        this.navCtrl.push(PlannerPage);
         // this.nav.setRoot(HomePage);
     }
 }

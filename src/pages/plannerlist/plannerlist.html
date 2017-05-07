@@ -1,0 +1,17 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Planner</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="nutrition-planner">
+  <ion-list>
+<ion-item padding *ngFor="let d of data" (click)="toggleDetails(d)"><ion-icon color="primary" item-right [name]="d.icon"></ion-icon>
+      {{d.title}}
+      <div *ngIf="d.showDetails" (click)="foodList()">{{d.details}}</div>
+    </ion-item>
+  </ion-list>
+</ion-content>

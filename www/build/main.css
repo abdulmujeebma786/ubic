@@ -24451,6 +24451,46 @@ ion-title {
   padding: 0 50px 0px !important;
 }
 
+.scroll-tabs {
+  height: 33px !important;
+}
+
+.scroll-tabs .scroll-container {
+  height: 33px;
+  overflow: scroll;
+  white-space: nowrap;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.scroll-tabs .scroll-container .section {
+  min-width: 12vw;
+  display: inline-block;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 0;
+}
+
+.scroll-tabs .scroll-container .section .tab9-button {
+  border-radius: 0;
+  padding-bottom: 3px;
+  padding-left: 1px;
+  padding-right: 1px;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  color: #222;
+  text-transform: none !important;
+}
+
+.scroll-tabs .scroll-container .section .tab9-button.selected {
+  color: #488aff;
+  border-bottom: 3px solid #32db64;
+}
+
+.scroll-tabs .scroll-container .section .tab9-button.three {
+  width: 29vw;
+}
+
 .goal-content h1 {
   padding-top: 50px;
 }
@@ -24546,6 +24586,127 @@ td, th {
 
 .medical-model .toolbar-ios ion-title {
   padding: 0px 66px 1px;
+}
+
+/*Nutrition Planner*/
+.nutrition-planner .percentage_div_inner, .plannerlist .percentage_div_inner {
+  height: 25px;
+  border: 1px solid #e0e0e0;
+  padding-left: 0px !important;
+  background: #A6D1EF;
+}
+
+.nutrition-planner .MealStatus, .plannerlist .MealStatus {
+  background: #047aed !important;
+  float: left;
+}
+
+/* Experiences */
+.nutrition-planner ul.experiences {
+  padding-left: 68px;
+  margin-top: 80px;
+}
+
+.nutrition-planner ul.experiences li {
+  padding-left: 33px;
+  margin-bottom: 2.5em;
+  list-style: none;
+}
+
+.nutrition-planner .title-text {
+  font-size: 1.2857em;
+  /* 18/16 -> 18px */
+  font-weight: 300;
+  display: inline;
+  margin-right: 0.5em;
+}
+
+/* BORDERS AND BULLETS */
+.nutrition-planner ul.experiences li {
+  position: relative;
+  /* so that pseudoelements are positioned relatively to their "li"s*/
+  /* use padding-bottom instead of margin-bottom.*/
+  margin-bottom: 0;
+  /* This overrides previously specified margin-bottom */
+  padding-bottom: 4.5em !important;
+  color: #3e3b3b;
+}
+
+.padd {
+  padding-bottom: 0em !important;
+}
+
+.nutrition-planner ul.experiences li span {
+  padding-left: 13px;
+  font-weight: bold;
+  color: blue;
+  font-size: 20px;
+}
+
+.nutrition-planner ul.experiences li:after {
+  /* bullets */
+  content: "";
+  position: absolute;
+  left: -19px;
+  /*adjust manually*/
+  top: 6px;
+  border: solid #3e3b3b;
+  border-width: 3px 3px 3px 3px;
+  border-radius: 5px;
+}
+
+.nutrition-planner ul.experiences li:before {
+  /* lines */
+  content: "";
+  position: absolute;
+  left: -16px;
+  /* adjust manually */
+  border-left: 1px solid #dcd6d6;
+  height: 100%;
+}
+
+.nutrition-planner ul.experiences li:first-child:before {
+  /* first li's line */
+  top: 6px;
+  /* moves the line down so that it disappears under the bullet. Adjust manually */
+}
+
+.nutrition-planner ul.experiences li:last-child:before {
+  /* last li's line */
+  height: 6px;
+  /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+}
+
+.nutrition-planner .sub-header, .plannerlist .sub-header {
+  background: #E1F2FA !important;
+  margin-top: 43px;
+}
+
+.plannerlist .sub-header h5, .nutrition-planner .sub-header h5 {
+  padding-bottom: 14px;
+}
+
+.nutrition-planner .has-subheader, .plannerlist .has-subheader {
+  top: 111px;
+}
+
+.nutrition-planner .item-avatar {
+  margin-left: -44px;
+  border: none;
+}
+
+.nutrition-planner .title-text:before {
+  background-image: url(../assets/img/line.png);
+  width: 43px;
+  height: 8px;
+  position: absolute;
+  left: -13px;
+  top: 2px;
+  content: "";
+}
+
+.nutrition-planner .border {
+  border-right: 1px solid gray;
 }
 
 .overview-content .radio-text {

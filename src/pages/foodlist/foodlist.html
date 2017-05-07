@@ -1,0 +1,12 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>FoodList</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="nutrition-planner">
+<scroll-tabs #scrollTab [tabs]="tabs" (onSelectedTab)="tabChange($event)"></scroll-tabs>
+</ion-content>
