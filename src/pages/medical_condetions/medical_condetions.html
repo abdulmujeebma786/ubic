@@ -13,12 +13,12 @@
 </ion-header>
 
 <ion-content>
-    <ion-item *ngFor="let item of medicalCondetions">>
+    <ion-item *ngFor="let item of medicalCondetions" >
         <ion-label>{{item.name}}</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
+        <ion-checkbox (click)="selectmedical(item)" color="dark"></ion-checkbox>
     </ion-item>
 
      <div align="center" padding>
-        <button ion-button class="submit-button">Submit</button>
+        <button ion-button class="submit-button" (click)="submit()">Submit</button>
     </div>
 </ion-content>

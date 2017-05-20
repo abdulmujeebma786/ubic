@@ -6,14 +6,14 @@
         <ion-row class="radio-row">
             <ion-col col-5 center> <span class="text-A">I am a </span></ion-col>
             <ion-col col-7>
-                <div class="radio-text"><input type="radio" ng-model="Bodydetails.gender" name='m' value="man"> Man</div>
-                <div class="radio-text"> <input name='m' ng-model="Bodydetails.gender" type="radio" value="woman"> Woman</div>
+                <div class="radio-text"><input type="radio" [(ngModel)]="Bodydetails.gender" name='m' value="man"> Man</div>
+                <div class="radio-text"> <input name='m' [(ngModel)]="Bodydetails.gender" type="radio" value="woman"> Woman</div>
             </ion-col>
         </ion-row>
         <ion-row padding-top>
             <ion-col col-5 center>Current Weight</ion-col>
             <ion-col col-5 class="input-styles">
-                <ion-input type="number" ></ion-input>
+                <ion-input [(ngModel)]="Bodydetails.currentweight" type="number" ></ion-input>
             </ion-col>
             <ion-col col-2>kg</ion-col>
         </ion-row>
@@ -21,7 +21,7 @@
         <ion-row padding-top>
             <ion-col col-5 center>Current Height</ion-col>
             <ion-col col-5 class="input-styles">
-                <ion-input type="number" ></ion-input>
+                <ion-input [(ngModel)]="Bodydetails.currentheight" type="number" ></ion-input>
             </ion-col>
             <ion-col col-2>cms</ion-col>
         </ion-row>
@@ -29,58 +29,39 @@
         <ion-row padding-top>
             <ion-col col-5 center>Birthday</ion-col>
             <ion-col col-5 class="input-styles">
-                <ion-datetime displayFormat="MMM DD YYYY" min="{{minDate}}" max="{{maxDate}}"></ion-datetime>
+                <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="Bodydetails.birthday" min="{{minDate}}" max="{{maxDate}}"></ion-datetime>
             </ion-col>
         </ion-row>
 
         <ion-row class="radio-row" padding-top>
             <ion-col col-5 center> <span class="text-A">Orientation</span></ion-col>
             <ion-col col-7>
-                <div class="radio-text"><input type="radio"  name='orientation' value="Vegetarian"> Vegetarian</div>
-                <div class="radio-text"> <input name='orientation'  type="radio" value="NonVegetarian"> Non Vegetarian</div>
+                <div class="radio-text"><input type="radio" [(ngModel)]="Bodydetails.orientation" name='orientation' value="Vegetarian"> Vegetarian</div>
+                <div class="radio-text"> <input name='orientation'  type="radio" [(ngModel)]="Bodydetails.orientation" value="NonVegetarian"> Non Vegetarian</div>
             </ion-col>
         </ion-row>
 
         <ion-row class="radio-row" padding-top>
             <ion-col col-5 center> <span class="text-A">Medical Condetions</span></ion-col>
             <ion-col col-5 class="input-styles">
-                <ion-input type="text" readonly (click)="openPop()"></ion-input>
+                <ion-input type="text" readonly [(ngModel)]="Bodydetails.medicalCondetions" (click)="openPop()"></ion-input>
             </ion-col>
         </ion-row>
 
         <div class="ranger-div-body">
-            <ion-row class="slider-row">
-                <ion-col *ngFor="let item of boxItems">
-                    <div  (click)="ChangeUserLevel(item.id)"></div>
-                </ion-col>
-            </ion-row>
+            <span class="text-A">Physical Activity Level:</span>
+            <ion-segment [(ngModel)]="Bodydetails.userlevel">
+                <ion-segment-button  value="1">1</ion-segment-button>
+                <ion-segment-button value="2">2</ion-segment-button>
+                <ion-segment-button value="3">3</ion-segment-button>
+                <ion-segment-button value="4">4</ion-segment-button>
+                 <ion-segment-button value="5">5</ion-segment-button>
+            </ion-segment>
         </div>
-
-
-
-
-
-
-
-        <!--<div class="ranger-div-body">-->
-            <!--<div class="row slider-row">-->
-                <!--<div class="col" ng-repeat="item in boxItems" ng-class="{ 'slider-box-border' : activeBox == item.id }">-->
-                    <!--<div class="{{ item.class }}" ng-click="ChangeUserLevel(item.id)"></div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<p align="center">E.g. {{LevelUser}}</p>-->
-            <!--<label class="item btn-item">-->
-                <!--<button class="button button-block button-ubic" ng-click="submitBodyDetails(Bodydetails)">NEXT</button>-->
-            <!--</label>-->
-
-
-        <!--</div>-->
-
-
     </ion-grid>
 
     <div align="center" padding>
-        <button ion-button class="submit-button" (click)="submitBody()">Submit</button>
+        <button ion-button class="submit-button" (click)="submitBody(Bodydetails)">Submit</button>
     </div>
 
 </ion-content>

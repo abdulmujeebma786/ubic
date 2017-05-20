@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
 import { NgCalendarModule  } from 'ionic2-calendar';
+import { CommonService } from '../pages/services/common.service';
+import { SharedService } from '../pages/services/shared.service';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -24,6 +27,8 @@ import { PlannerListPage } from '../pages/plannerlist/plannerlist';
 import { FoodListPage } from '../pages/foodlist/foodlist';
 import { ScrollTabsComponent } from '../pages/components/scrolltabs';
 
+
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -40,6 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     NgCalendarModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -56,6 +62,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    CommonService,SharedService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

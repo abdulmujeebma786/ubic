@@ -4,6 +4,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TargetPage } from '../target/target';
+import { BodyDetails } from '../body_details/body_details';
 @Component({
     selector: 'page-goal',
     templateUrl: 'goal.html'
@@ -15,7 +16,16 @@ export class GoalPage {
     }
 
     selectGoal(goal) {
-      this.navCtrl.push(TargetPage);
+        switch (goal){
+            case  'Achive Goal' :
+                    this.navCtrl.push(TargetPage,{goaltype:goal});
+                    break;
+            case 'Stay Fit':
+                    this.navCtrl.push(BodyDetails,{goaltype:goal});
+                    break;
+        }
+
+      
     }
 
 }

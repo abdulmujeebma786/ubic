@@ -41,6 +41,7 @@ background: -o-linear-gradient(#fff, #eaeaef); /* For Opera 11.1 to 12.0 */
 background: -moz-linear-gradient(#fff, #eaeaef); /* For Firefox 3.6 to 15 */
 background: linear-gradient(#fff, #eaeaef); /* Standard syntax */
 padding-bottom: 27px;
+padding-top: 40px;
 
 }
 
@@ -65,22 +66,15 @@ padding-bottom: 27px;
   padding-top: 18px;
 }
 
-.slider-row .box1 {
-  background: #D6DAE3;
+.segment-ios .segment-button{
+      border-color: #353344;
+      color: #353344;
 }
 
-.slider-row .box2 {
-  background: #B2CAE8;
+.segment-ios .segment-button.segment-activated {
+  background-color: #353344
 }
 
-.slider-row .box3 {
-  background: #75AEEC;
-}
-
-.slider-row .box4 {
-  background: #2F90EE;
-}
-
-.slider-row .box5 {
-  background: #047aed;
+.body-details-content ion-segment {
+      padding-top: 25px;
 }

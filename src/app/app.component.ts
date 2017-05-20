@@ -8,6 +8,7 @@ import { CoachPage } from '../pages/coach/coach';
 import { LandingPage} from '../pages/landing/landing'
 import { TargetPage } from '../pages/target/target';
 import { SettingsPage } from '../pages/settings/settings';
+import { GoalPage } from '../pages/goal/goal';
 import { TrackersPage } from '../pages/trackers/trackers';
 import { LoginPage } from '../pages/login/login';
 @Component({
@@ -16,8 +17,8 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LandingPage;
-  // rootPage: any = HomePage;
+  // rootPage: any = GoalPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 

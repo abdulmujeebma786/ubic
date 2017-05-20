@@ -24367,6 +24367,7 @@ ion-navbar.toolbar {
   background: linear-gradient(#fff, #eaeaef);
   /* Standard syntax */
   padding-bottom: 27px;
+  padding-top: 40px;
 }
 
 .body-details-content .slider-row {
@@ -24390,24 +24391,17 @@ ion-navbar.toolbar {
   padding-top: 18px;
 }
 
-.slider-row .box1 {
-  background: #D6DAE3;
+.segment-ios .segment-button {
+  border-color: #353344;
+  color: #353344;
 }
 
-.slider-row .box2 {
-  background: #B2CAE8;
+.segment-ios .segment-button.segment-activated {
+  background-color: #353344;
 }
 
-.slider-row .box3 {
-  background: #75AEEC;
-}
-
-.slider-row .box4 {
-  background: #2F90EE;
-}
-
-.slider-row .box5 {
-  background: #047aed;
+.body-details-content ion-segment {
+  padding-top: 25px;
 }
 
 /*
@@ -24535,6 +24529,17 @@ td, th {
   background-repeat: no-repeat;
 }
 
+.ios page-home .scroll-content {
+  background: white !important;
+}
+
+.home-page .main-content {
+  background: #f2f8fd;
+  border-radius: 4px;
+  box-shadow: 19px;
+  box-shadow: 0px 2px 4px 3px #e8e8e8;
+}
+
 .footer .grid {
   padding: 0px !important;
 }
@@ -24582,6 +24587,14 @@ td, th {
 .list-md .item-input.input-has-focus:last-child {
   border-bottom-color: none;
   box-shadow: none;
+}
+
+.item-md.item-input.input-has-focus .item-inner {
+  box-shadow: none;
+}
+
+.list-md .item-input.input-has-focus:last-child, .list-md .item-input:last-child {
+  border-bottom: none;
 }
 
 .medical-model .toolbar-ios ion-title {
@@ -24777,17 +24790,17 @@ td, th {
   padding-top: 50%;
 }
 
-.datetime {
-  border-bottom: 1px solid;
-  margin-top: -21px;
-}
-
 .target-weight {
   margin-bottom: 40px;
 }
 
 .submit-div {
   padding: 45px 0px;
+}
+
+.target-content .datetype {
+  margin-top: -25px;
+  border-bottom: 1px solid;
 }
 
 .ios page-home .scroll-content, .md page-home .scroll-content {

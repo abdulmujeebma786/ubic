@@ -25,3 +25,10 @@
     border-bottom-color:none; 
     box-shadow: none
 }
+
+.item-md.item-input.input-has-focus .item-inner {
+  box-shadow: none;
+}
+.list-md .item-input.input-has-focus:last-child, .list-md .item-input:last-child {
+  border-bottom: none;
+}

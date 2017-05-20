@@ -7,11 +7,11 @@
         </ion-row>
     </ion-grid>-->
     <div padding>
-        <p>Yor Body Mass Index (BMI) is <b>28 </b></p>
-        <p>You are <b>good</b></p>
+        <p>Yor Body Mass Index (BMI) is <b>{{Bmi}} </b></p>
+        <p>You are <b>{{BmiStatus}}</b></p>
         <p>Calorie Expenditure is <b>{{Calery_Expendeture}}</b> calories/day</p>
 
-         <p>You need to consume <b>4563</b> calories/day for 34634.</p>
+         <p>You need to consume <b>{{calorieDiet}}</b> calories/day for <b>{{resultStatus}}</b>.</p>
     </div>
     <div align="center" padding>
         <button ion-button class="submit-button" (click)="nextPage()">NEXT</button>
