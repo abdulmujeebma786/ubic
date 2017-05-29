@@ -12,25 +12,47 @@
         <div padding align="center">How many meals today?</div>
         <ion-row class="radio-row" align="center">
             <ion-col>
-                <div class="radio-text"><input type="radio"  name='meals' value="4"> 4</div>
+                <div class="radio-text"><input (click)="setPlanner('4')" type="radio"  name='meals' value="4" [(ngModel)]="orientation"> 4</div>
             </ion-col>
             <ion-col>
-                <div class="radio-text"> <input name='meals'  type="radio" value="5"> 5</div>
+                <div class="radio-text"> <input (click)="setPlanner('5')" name='meals'  type="radio" value="5" [(ngModel)]="orientation"> 5</div>
             </ion-col>
             <ion-col>
-                <div class="radio-text"> <input name='meals'  type="radio" value="6"> 6</div>
+                <div class="radio-text"> <input (click)="setPlanner('6')" name='meals'  type="radio" value="6" [(ngModel)]="orientation"> 6</div>
             </ion-col>
         </ion-row>
+    </ion-grid>
+
+    <!--Special event-->
+     <ion-grid padding class="meals-grid">
+         <div class="ranger-div-body">
+            <span class="text-A">Accelarate:</span>
+            <ion-segment [(ngModel)]="accelarate" (click)="checkAccelarate()">
+                <ion-segment-button  value="1">1</ion-segment-button>
+                <ion-segment-button value="2">2</ion-segment-button>
+                <ion-segment-button value="3">3</ion-segment-button>
+                <ion-segment-button value="4">4</ion-segment-button>
+                 <ion-segment-button value="5">5</ion-segment-button>
+            </ion-segment>
+        </div>
     </ion-grid>
 
     <ion-grid padding class="meals-grid">
-        <ion-row class="radio-row" align="center">
-           
-        </ion-row>
+         <div class="ranger-div-body">
+            <span class="text-A">Physical Activity Level:</span>
+            <ion-segment >
+                <ion-segment-button  value="1">1</ion-segment-button>
+                <ion-segment-button value="2">2</ion-segment-button>
+                <ion-segment-button value="3">3</ion-segment-button>
+                <ion-segment-button value="4">4</ion-segment-button>
+                 <ion-segment-button value="5">5</ion-segment-button>
+            </ion-segment>
+        </div>
+        <div align="center" padding>
+            <button ion-button class="submit-button" (click)="SubmitMeals()">NEXT</button>
+        </div>
     </ion-grid>
 
-     <div align="center" padding>
-        <button ion-button class="submit-button" (click)="SubmitMeals()">NEXT</button>
-    </div>
+     
 
 </ion-content>

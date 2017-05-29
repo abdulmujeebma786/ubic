@@ -14,30 +14,35 @@
         <ul class="experiences">
 
             <!-- Experience -->
-            <li class="padd" >
-                <div class="title-text">hjfjhfjhj <span>
-                    <ion-icon ios="ios-add" (click)="goToPlannerList()" md="md-add"></ion-icon>
-                    <!--<i ng-if="item.selected[0].selected != ''" class="ion-edit" ng-click="addFood(item,$index)"></i>-->
+            <li class="" *ngFor="let item of plannerData" [ngClass]="{'padd' : item.selected.length > 0}">
+                <div class="title-text">{{item.meal_name}}
+                 <span>
+                    <ion-icon ios="ios-add" *ngIf="item.selected.length < 1" md="md-add" (click)="goToPlannerList(item,index)"></ion-icon>
+                     <ion-icon ios="ios-create" *ngIf="item.selected.length > 0" md="md-add" (click)="goToPlannerList(item,index)"></ion-icon>
                 </span>
-                </div>
-            </li>
-            <li class="padd" >
-                <div class="title-text">hjfjhfjhj 
-                    <span>
-                    <ion-icon ios="ios-add" (click)="goToPlannerList()" md="md-add"></ion-icon>
-                    <!--<i ng-if="item.selected[0].selected != ''" class="ion-edit" ng-click="addFood(item,$index)"></i>-->
-                </span>
-                </div>
-            </li>
-            <li class="padd" >
-                <div class="title-text">hjfjhfjhj 
-                    <span>
-                        <ion-icon ios="ios-add" (click)="goToPlannerList()" md="md-add"></ion-icon>
-                        <!--<i ng-if="item.selected[0].selected != ''" class="ion-edit" ng-click="addFood(item,$index)"></i>-->
-                    </span>
-                </div>
-            </li>
+                <ion-list class="planner-list" *ngIf="item.type !='snack'">
+                    <ion-item  *ngFor="let sub_meals of item.selected" >
+                        <ion-avatar item-left>
+                            <img src="../assets/img/test.png">
+                        </ion-avatar>
+                        <h2>Cher</h2>
+                        <p>Ugh. As if.</p>
+                    </ion-item>
+                </ion-list>
 
+                <ion-list class="planner-list" *ngIf="item.type =='snack'">
+                    <ion-item  *ngFor="let sub_meals of item.selected" >
+                        <ion-avatar item-left>
+                            <img src="../assets/img/test.png">
+                        </ion-avatar>
+                        <h2>Cher</h2>
+                        <p>Ugh. As if.</p>
+                    </ion-item>
+                </ion-list>
+
+                </div>
+            </li>
+           
             
         </ul>
     </div>

@@ -17,6 +17,7 @@ import { GoalPage } from '../pages/goal/goal';
 import { TargetPage } from '../pages/target/target';
 import { BodyDetails } from '../pages/body_details/body_details';
 import { MedicalCondetions } from '../pages/medical_condetions/medical_condetions';
+import { SpecialPromoModel } from '../pages/special_promo_model/special_promo_model';
 import { Results } from '../pages/results/results';
 import { ProgrameOverviewPage } from '../pages/programe_overview/programe_overview';
 import { SpecialEventPage } from '../pages/special_event/special_event';
@@ -38,7 +39,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CoachPage,
     LandingPage,
     LoginPage, SignupPage,
-    forgetPasswordPage, GoalPage,TargetPage, BodyDetails, MedicalCondetions,
+    forgetPasswordPage, GoalPage,TargetPage, BodyDetails, MedicalCondetions,SpecialPromoModel,
     Results, ProgrameOverviewPage, SpecialEventPage, SettingsPage, TrackersPage, PlannerPage,ScrollTabsComponent,
     PlannerListPage, FoodListPage
   ],
@@ -55,7 +56,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CoachPage,
     LandingPage,
     LoginPage, SignupPage,
-    forgetPasswordPage, GoalPage, TargetPage, BodyDetails, MedicalCondetions,
+    forgetPasswordPage, GoalPage, TargetPage, BodyDetails, MedicalCondetions,SpecialPromoModel,
     Results, ProgrameOverviewPage, SpecialEventPage, SettingsPage, TrackersPage, PlannerPage,
     PlannerListPage, FoodListPage
   ],

@@ -10,7 +10,7 @@ import { MonthViewComponent } from 'ionic2-calendar/monthview';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+ progress = 70;
   constructor(public navCtrl: NavController) {
 
   }

@@ -16,6 +16,14 @@ export class PlannerListPage {
 
     constructor(public navCtrl: NavController,public viewCtrl : ViewController) {
 
+        var data = [{'sub_meal_name':'Main course','sub_meal_id':1,'selected':""},
+                                    {'sub_meal_name':'SideDish','sub_meal_id':2,'selected':""}]
+        
+        var snacks = [{'title':'Beverages','sub_meal_id':3,'selected':""},
+                                    {'title':'Salads','sub_meal_id':7,'selected':""},{'title':'Fruits','sub_meal_id':6,'selected':""},{'title':'Soups','sub_meal_id':4,'selected':""},{'title':'Sandwiches','sub_meal_id':5,'selected':""}]
+
+
+
         for(let i = 0; i < 10; i++ ){
       this.data.push({
           title: 'Title '+i,

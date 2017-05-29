@@ -5,28 +5,55 @@
     </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
+
  <!--<ion-toolbar>
    <ion-navbar>
     <ion-title>{{viewTitle}}</ion-title>
     </ion-navbar>
  </ion-toolbar>-->
 <!--#f2f8fd-->
-
-  
 </ion-header>
 
 <ion-content class="home-page">
-
-    <div padding class="main-content">
-        <p padding> Meals Planned : 42</p>
-        <p padding>Diets Planned : 16/31</p>
-
-        <div padding>
+    <div margin class="main-content">
+        <p class="meals-planned"> Meals Planned : 42</p>
+        <p class="diet-planned">Diets Planned : 16/31</p>
+                <div padding>
             <img src="assets/img/logo.png">
         </div>
-
-        
+        <div margin class="area-progress">
+            <ion-grid>
+                <ion-row >
+                    <ion-col col-8><p>Today's Calorie Intake</p></ion-col>
+                    <ion-col col-4><p  align="right"><span>12222</span>cal</p></ion-col>
+                </ion-row>
+            </ion-grid>
+            <div padding>
+                <div class="progress-outer">
+                    <div class="progress-inner" [style.width]="progress + '%'">
+                        {{progress}}%
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div margin class="sub-content">
+        <ion-grid>
+            <ion-row>
+                <ion-col class="col1">Current Weight
+                    <br>60 kg<br>
+                </ion-col>
+                <ion-col class="col2">Target Weight<br>55 kg</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="col1">Current Weight
+                    <br>60 kg<br>
+                </ion-col>
+                <ion-col class="col2">Target Weight<br>55 kg</ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
 
 </ion-content>
 

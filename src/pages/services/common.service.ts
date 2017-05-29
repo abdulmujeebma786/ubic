@@ -7,7 +7,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 /*import { HttpObject } from 'http.object';
 */
-import { BASE_URL } from './config.service';
+import { BASE_URL, ADMIN_URL } from './config.service';
 import { LoadingController, Platform } from 'ionic-angular';
 import { SharedService } from './shared.service';
 
@@ -65,22 +65,19 @@ export class CommonService {
 		.catch(this.errorHandle);
    	}
 
-	httpGetMethodCallOData(url: string, query:URLSearchParams){
-		url = BASE_URL + url;
-		
-		this.access_token = localStorage.getItem('access_token');
+	httpGetMethodCallOData(url: string){
+		this.showLoader()
+		url = ADMIN_URL + url;
 		const headers = new Headers();
-		if(this.access_token){
-			headers.append('Authorization', 'Bearer '+this.access_token);
-		}
+		
 
 		return this.http.get(url,{
-	      	headers: headers,
-			search: query
+	      	headers: new Headers({'Content-Type':'application/x-www-form-urlencoded'})
 		})
         //.map(res => res.json())
         .map((data: Response) => {
 			if(data.status == 200){
+				this.loadingPopup.dismiss();
         		return data.json() 
         	}
 		})
@@ -92,8 +89,6 @@ export class CommonService {
 		// this.access_token = localStorage.getItem('access_token');
 		// const headers = new Headers();
 		url = BASE_URL + url;
-
-		
 		// headers.append('Content-Type', 'application/json');
 		
 
@@ -119,6 +114,7 @@ export class CommonService {
   	}
 
 	public showLoader() {
+
 	    this.loadingPopup = this._loadingCtrl.create({
 	      content: 'Loading...'
 	    });

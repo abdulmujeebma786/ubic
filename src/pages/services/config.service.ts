@@ -7,6 +7,7 @@ export class ConfigService {
 }
  
 export const BASE_URL: string = "http://ubicfitness.com/mobileApp/ApiV2/App.php?status=";
+export const ADMIN_URL: string = "http://ubicfitness.com/newadmin/pjt/api/"
 
 
 export const CONSTANTS = {
@@ -20,5 +21,6 @@ export const CONSTANTS = {
             ValidationTargetweight:'Please eneter your target weight',
             TargetdateValidation:'Please select Target Date',
             allfields:'Please fill all the fields',
-            weightvalidation:'Please enter Target weight < Current weight'
+            weightvalidation:'Please enter Target weight < Current weight',
+            orientation:'Please select your orientation'
 }

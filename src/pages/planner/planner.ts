@@ -4,36 +4,40 @@
 import { Component } from '@angular/core';
 import { ModalController, NavController, Platform, ViewController } from 'ionic-angular';
 import { PlannerListPage } from '../../pages/plannerlist/plannerlist';
+import { CommonService } from '../services/common.service';
+import { SharedService } from '../services/shared.service';
+import { CONSTANTS } from '../services/config.service';
+import * as moment from 'moment';
 @Component({
     selector: 'planner',
     templateUrl: 'planner.html'
 })
 export class PlannerPage {
     
-    plannerData = [];
+    plannerData = JSON.parse(localStorage.getItem("planner"));
     
-    constructor(public navCtrl: NavController,public viewCtrl : ViewController) {
+    
+    constructor(public navCtrl: NavController,public viewCtrl : ViewController, public _commonService : CommonService, public SharedService:SharedService) {
 
-        this.plannerData = [{
-                                'id':1,'title':'Breakefast',type:'main','name':'breakefast','selected':[{'title':'Main course','id':1,'selected':""},
-                                    {'title':'SideDish','id':2,'selected':""}]
-                            },{
-                                'id':3,'title':'Snacks',type:'snack','name':'middlesnacks','selected':[{'title':'Beverages','id':3,'selected':""},
-                                    {'title':'Salads','id':7,'selected':""},{'title':'Fruits','id':6,'selected':""},{'title':'Soups','id':4,'selected':""},{'title':'Sandwiches','id':5,'selected':""}]
-                            },{
-                                'id':4,'title':'Lunch',type:'main','name':'lunch','selected':[{'title':'Main course','id':1,'selected':""},
-                                    {'title':'SideDish','id':2,'selected':""}]
-                            },{
-                                'id':5,'title':'snacks',type:'snack','name':'eveningsnack','selected':[{'title':'Beverages','id':3,'selected':""},
-                                    {'title':'Salads','id':7,'selected':""},{'title':'Fruits','id':6,'selected':""},{'title':'Soups','id':4,'selected':""},{'title':'Sandwiches','id':5,'selected':""}]
-                            },{
-                                'id':6,'title':'Dinner',type:'main','name':'dinner','selected':[{'title':'Main course','id':1,'selected':""},
-                                    {'title':'SideDish','id':2,'selected':""}]
-                            }];
+        // this.getData()
+        
     }
 
-    goToPlannerList(){
-        this.navCtrl.push(PlannerListPage);
+    getData(){
+        // this._commonService.httpGetMethodCallOData('meals'). subscribe(
+        //         response => {
+        //             console.log(response);
+        //         },
+        //         error => {
+        //             this.SharedService.errorHandling(error);
+        //         }
+        // );
+    }
+
+    goToPlannerList(item, index){
+        console.log(item)
+        console.log(index);
+        this.navCtrl.push(PlannerListPage,{});
     }
 
     dismiss() {

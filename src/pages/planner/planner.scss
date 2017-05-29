@@ -37,7 +37,7 @@
 	position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
 	/* use padding-bottom instead of margin-bottom.*/
 	margin-bottom: 0; /* This overrides previously specified margin-bottom */
-	padding-bottom: 4.5em!important;
+	padding-bottom: 4.5em;
 	color: #3e3b3b;
 }
 
@@ -115,4 +115,10 @@
 
 .nutrition-planner .border {
 	border-right: 1px solid gray;
+}
+
+.nutrition-planner .planner-list{
+	margin-left: -44px;
+    margin-bottom: 8px;
+    margin-top: 13px;
 }

@@ -7,13 +7,13 @@
     <ion-title>SPECIAL EVENT</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content class="overview-content">
+<ion-content class="overview-content special-event">
     <ion-grid padding class="meals-grid">
         <div padding align="center">What's your special Event?</div>
             <ion-row>
                 <ion-col col-2></ion-col>
                 <ion-col col-8>
-                    <ion-select multiple="false">
+                    <ion-select multiple="false" [(ngModel)]="special.event">
                         <ion-option  value="Getting Engaged">Getting Engaged</ion-option>
                         <ion-option value="extra cheese">Wedding</ion-option>
                         <ion-option value="pepperoni">A Sports Event</ion-option>
@@ -28,20 +28,34 @@
         <ion-row center class="target-weight">
             <ion-col col-5>I WANT TO BE </ion-col>
             <ion-col col-5>
-                <ion-input  class="target-input" type="number"></ion-input>
+                <ion-input [(ngModel)]="special.weight" class="target-input" type="number"></ion-input>
             </ion-col>
             <ion-col col-2>Kgm</ion-col>
         </ion-row>
         <ion-row center>
             <ion-col col-5>TARGET DATE</ion-col>
             <ion-col col-5>
-                <ion-datetime displayFormat="MMM DD YYYY" min="{{minDate}}" max="{{maxDate}}"></ion-datetime>
+                <ion-datetime class="special-date" [(ngModel)]="special.date" displayFormat="MMM DD YYYY" min="{{minDate}}" max="{{maxDate}}"></ion-datetime>
             </ion-col>
         </ion-row>
     </ion-grid>
+     <ion-grid padding class="meals-grid">
+         <div class="ranger-div-body">
+            <span class="text-A">Accelarate:</span>
+            <ion-segment [(ngModel)]="special.accelarate">
+                <ion-segment-button  value="1">1</ion-segment-button>
+                <ion-segment-button value="2">2</ion-segment-button>
+                <ion-segment-button value="3">3</ion-segment-button>
+                <ion-segment-button value="4">4</ion-segment-button>
+                 <ion-segment-button value="5">5</ion-segment-button>
+            </ion-segment>
+        </div>
+
+        <div align="center" padding>
+            <button ion-button class="submit-button" (click)="Submit(special)">NEXT</button>
+        </div>
+    </ion-grid>
 
 
-     <div align="center" padding>
-        <button ion-button class="submit-button" (click)="SubmitMeals()">NEXT</button>
-    </div>
+     
 </ion-content>

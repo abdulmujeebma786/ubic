@@ -8,10 +8,18 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="nutrition-planner">
+
+
+
   <ion-list>
-<ion-item padding *ngFor="let d of data" (click)="toggleDetails(d)"><ion-icon color="primary" item-right [name]="d.icon"></ion-icon>
-      {{d.title}}
-      <div *ngIf="d.showDetails" (click)="foodList()">{{d.details}}</div>
+    <ion-item padding *ngFor="let d of data" (click)="toggleDetails(d)"><ion-icon color="primary" item-right [name]="d.icon"></ion-icon>
+        {{d.title}}
+        <div >{{d.details}}</div>
+        <ion-list class="planner-list" *ngIf="d.showDetails" (click)="foodList()">
+            <ion-item >
+                <h2>Cher</h2>
+            </ion-item>
+        </ion-list>
     </ion-item>
   </ion-list>
 </ion-content>
