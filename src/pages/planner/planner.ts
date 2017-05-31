@@ -8,6 +8,8 @@ import { CommonService } from '../services/common.service';
 import { SharedService } from '../services/shared.service';
 import { CONSTANTS } from '../services/config.service';
 import * as moment from 'moment';
+import * as _ from 'lodash';
+
 @Component({
     selector: 'planner',
     templateUrl: 'planner.html'
@@ -20,6 +22,7 @@ export class PlannerPage {
     constructor(public navCtrl: NavController,public viewCtrl : ViewController, public _commonService : CommonService, public SharedService:SharedService) {
 
         // this.getData()
+        this.plannerData = JSON.parse(localStorage.getItem("planner"));
         
     }
 
@@ -34,10 +37,9 @@ export class PlannerPage {
         // );
     }
 
-    goToPlannerList(item, index){
-        console.log(item)
-        console.log(index);
-        this.navCtrl.push(PlannerListPage,{});
+    goToPlannerList(item){
+        var index = _.findIndex(this.plannerData, { 'id': item.id});
+        this.navCtrl.push(PlannerListPage,{index:index, length:item.selected.length});
     }
 
     dismiss() {

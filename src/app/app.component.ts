@@ -20,17 +20,17 @@ export class MyApp {
   // rootPage: any = GoalPage;
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: any, md:any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Profile', component: HomePage },
-      { title: 'Nutrition', component: CoachPage },
-      { title: 'Trackers', component: TrackersPage },
-      { title: 'Settings', component: SettingsPage }
+      { title: 'Profile', component: HomePage, icon:'ios-person', md:'md-person'},
+      { title: 'Nutrition', component: CoachPage, icon: 'ios-nutrition', md:'md-nutrition' },
+      { title: 'Trackers', component: TrackersPage, icon:'ios-analytics', md:'md-analytics'},
+      { title: 'Settings', component: SettingsPage, icon:'ios-settings', md:'md-settings' }
     ];
 
   }

@@ -17,8 +17,8 @@
             <li class="" *ngFor="let item of plannerData" [ngClass]="{'padd' : item.selected.length > 0}">
                 <div class="title-text">{{item.meal_name}}
                  <span>
-                    <ion-icon ios="ios-add" *ngIf="item.selected.length < 1" md="md-add" (click)="goToPlannerList(item,index)"></ion-icon>
-                     <ion-icon ios="ios-create" *ngIf="item.selected.length > 0" md="md-add" (click)="goToPlannerList(item,index)"></ion-icon>
+                    <ion-icon ios="ios-add" *ngIf="item.selected.length < 1" md="md-add" (click)="goToPlannerList(item)"></ion-icon>
+                     <ion-icon ios="ios-create" *ngIf="item.selected.length > 0" md="md-add" (click)="goToPlannerList(item)"></ion-icon>
                 </span>
                 <ion-list class="planner-list" *ngIf="item.type !='snack'">
                     <ion-item  *ngFor="let sub_meals of item.selected" >

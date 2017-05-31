@@ -24792,6 +24792,14 @@ td, th {
   margin-top: 13px;
 }
 
+.ion-ios-add {
+  font-weight: bold;
+}
+
+.nutrition-planner .subMealItem {
+  padding: 0px 13px !important;
+}
+
 .overview-content .radio-text {
   padding: 4px;
 }
