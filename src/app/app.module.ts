@@ -26,6 +26,7 @@ import { TrackersPage } from '../pages/trackers/trackers';
 import { PlannerPage } from '../pages/planner/planner';
 import { PlannerListPage } from '../pages/plannerlist/plannerlist';
 import { FoodListPage } from '../pages/foodlist/foodlist';
+import { AnalysisPage } from '../pages/plannerlist/analysis/analysis';
 import { ScrollTabsComponent } from '../pages/components/scrolltabs';
 
 
@@ -41,7 +42,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage, SignupPage,
     forgetPasswordPage, GoalPage,TargetPage, BodyDetails, MedicalCondetions,SpecialPromoModel,
     Results, ProgrameOverviewPage, SpecialEventPage, SettingsPage, TrackersPage, PlannerPage,ScrollTabsComponent,
-    PlannerListPage, FoodListPage
+    PlannerListPage, FoodListPage, AnalysisPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage, SignupPage,
     forgetPasswordPage, GoalPage, TargetPage, BodyDetails, MedicalCondetions,SpecialPromoModel,
     Results, ProgrameOverviewPage, SpecialEventPage, SettingsPage, TrackersPage, PlannerPage,
-    PlannerListPage, FoodListPage
+    PlannerListPage, FoodListPage, AnalysisPage
   ],
   providers: [
     StatusBar,

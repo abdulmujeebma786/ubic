@@ -9,42 +9,51 @@
 </ion-header>
 <ion-content class="nutrition-planner">
   
-<!--<progress-bar [progress]="55"></progress-bar>-->
+  <div class="progress-outer">
+      <div class="progress-inner" [style.width]="progress + '%'">
+          {{progress}}%
+      </div>
+  </div>
+   <ion-toolbar class="diet-meal">
+        <ion-grid>
+            <ion-row align="center">
+                <ion-col class="border">Diet Cals<br><span>232424</span></ion-col>
+                <ion-col class="border">Cals Added<br><span>232424</span></ion-col>
+                <ion-col>Cals Left<br><span>232424</span></ion-col>
+            </ion-row>
+        </ion-grid>
+  </ion-toolbar>
+
    <div class="list">
         <ul class="experiences">
-
-            <!-- Experience -->
             <li class="" *ngFor="let item of plannerData" [ngClass]="{'padd' : item.selected.length > 0}">
                 <div class="title-text">{{item.meal_name}}
-                 <span>
-                    <ion-icon ios="ios-add" *ngIf="item.selected.length < 1" md="md-add" (click)="goToPlannerList(item)"></ion-icon>
-                     <ion-icon ios="ios-create" *ngIf="item.selected.length > 0" md="md-add" (click)="goToPlannerList(item)"></ion-icon>
-                </span>
-                <ion-list class="planner-list" *ngIf="item.type !='snack'">
-                    <ion-item  *ngFor="let sub_meals of item.selected" >
-                        <ion-avatar item-left>
-                            <img src="../assets/img/test.png">
-                        </ion-avatar>
-                        <h2>Cher</h2>
-                        <p>Ugh. As if.</p>
-                    </ion-item>
-                </ion-list>
+                    <span>
+                        <ion-icon ios="ios-add" *ngIf="item.selected.length < 1" md="md-add" (click)="goToPlannerList(item)"></ion-icon>
+                        <ion-icon ios="ios-create" *ngIf="item.selected.length > 0" md="md-add" (click)="goToPlannerList(item)"></ion-icon>
+                    </span>
+                    <ion-list class="planner-list" *ngIf="item.type !='snack'">
+                        <ion-item  *ngFor="let sub_meals of item.selected" >
+                            <ion-avatar item-left>
+                                <img src="../assets/img/test.png">
+                            </ion-avatar>
+                            <h2>Cher</h2>
+                            <p>Ugh. As if.</p>
+                        </ion-item>
+                    </ion-list>
 
-                <ion-list class="planner-list" *ngIf="item.type =='snack'">
-                    <ion-item  *ngFor="let sub_meals of item.selected" >
-                        <ion-avatar item-left>
-                            <img src="../assets/img/test.png">
-                        </ion-avatar>
-                        <h2>Cher</h2>
-                        <p>Ugh. As if.</p>
-                    </ion-item>
-                </ion-list>
+                    <ion-list class="planner-list" *ngIf="item.type =='snack'">
+                        <ion-item  *ngFor="let sub_meals of item.selected" >
+                            <ion-avatar item-left>
+                                <img src="../assets/img/test.png">
+                            </ion-avatar>
+                            <h2>Cher</h2>
+                            <p>Ugh. As if.</p>
+                        </ion-item>
+                    </ion-list>
 
                 </div>
             </li>
-           
-            
         </ul>
     </div>
-
 </ion-content>

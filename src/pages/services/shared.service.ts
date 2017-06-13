@@ -49,44 +49,43 @@ export class SharedService {
         switch(orientation){
                         case '4':
                             this.data = [
-                                {
-                                    'id':1,'meal_name':'Breakefast',type:'main','selected':[{'sub_meal_name':'Main course','sub_meal_id':1,'selected':""},
-                                    {'sub_meal_name':'SideDish','sub_meal_id':2,'selected':""}]
+                            {
+                                    'id':1,'meal_name':'Breakefast',type:'main',diet_Percentage_value:0.40,maincource1_value:0.3,maincource2_value:0.7,sideDish1_value:0.05,sideDish2_value:0.7,'selected':[]
                             },{
-                                'id':4,'meal_name':'Lunch',type:'main','selected':[]
+                                'id':4,'meal_name':'Lunch',type:'main',diet_Percentage_value:0.3,maincource1_value:0.3,maincource2_value:0.7,sideDish1_value:0.05,sideDish2_value:0.7,'selected':[]
                             },{
-                                'id':5,'meal_name':'Evening Snack',type:'snack','selected':[]
+                                'id':5,'meal_name':'Evening Snack',type:'snack',diet_Percentage_value:0.15,snack1_value:0.1,snack2_value:1,'selected':[]
                             },{
-                                'id':6,'meal_name':'Dinner',type:'main','selected':[]
+                                'id':6,'meal_name':'Dinner',type:'main',diet_Percentage_value:0.3,maincource1_value:0.7,maincource2_value:0.5,sideDish1_value:0.7,sideDish2_value:0.7,'selected':[]
                             }]
                             break;
                         case '5':
 
                             this.data = [{
-                                'id':1,'meal_name':'Breakefast',type:'main','selected':[]
+                                'id':1,'meal_name':'Breakefast',type:'main',diet_Percentage_value:0.35,maincource1_value:0.3,maincource2_value:0.7,sideDish1_value:0.05,sideDish2_value:0.7,'selected':[]
                             },{
-                                'id':3,'meal_name':'Mid Morning Snack',type:'snack','selected':[]
+                                'id':3,'meal_name':'Mid Morning Snack',type:'snack',diet_Percentage_value:0.1,snack1_value:0.1,snack2_value:1,'selected':[]
                             },{
-                                'id':4,'meal_name':'Lunch',type:'main','selected':[]
+                                'id':4,'meal_name':'Lunch',type:'main',diet_Percentage_value:0.25,maincource1_value:0.3,maincource2_value:0.7,sideDish1_value:0.05,sideDish2_value:0.7,'selected':[]
                             },{
-                                'id':5,'meal_name':'Evening Snack',type:'snack','selected':[]
+                                'id':5,'meal_name':'Evening Snack',type:'snack',diet_Percentage_value:0.1,snack1_value:0.1,snack2_value:1,'selected':[]
                             },{
-                                'id':6,'meal_name':'Dinner',type:'main','selected':[]
+                                'id':6,'meal_name':'Dinner',type:'main',diet_Percentage_value:0.20,maincource1_value:0.3,maincource2_value:0.7,sideDish1_value:0.05,sideDish2_value:0.7,'selected':[]
                             }]
                             break;
                         case '6':
                             this.data = [{
-                                'id':2,'meal_name':'Early Morning Snack',type:'snack','selected':[]
+                                'id':2,'meal_name':'Early Morning Snack',type:'snack',diet_Percentage_value:0.05,snack1_value:0.1,snack2_value:1,'selected':[]
                             },{
-                                'id':1,'meal_name':'Breakefast',type:'main','selected':[]
+                                'id':1,'meal_name':'Breakefast',type:'main',diet_Percentage_value:0.30,maincource1_value:0.3,maincource2_value:0.7,sideDish1_value:0.05,sideDish2_value:0.7,'selected':[]
                             },{
-                                'id':3,'meal_name':'Mid Morning Snack',type:'snack','selected':[]
+                                'id':3,'meal_name':'Mid Morning Snack',type:'snack',diet_Percentage_value:0.1,snack1_value:0.1,snack2_value:1,'selected':[]
                             },{
-                                'id':4,'meal_name':'Lunch',type:'main','selected':[]
+                                'id':4,'meal_name':'Lunch',type:'main',diet_Percentage_value:0.25,maincource1_value:0.3,maincource2_value:0.7,sideDish1_value:0.05,sideDish2_value:0.7,'selected':[]
                             },{
-                                'id':5,'meal_name':'Evening Snack',type:'snack','selected':[]
+                                'id':5,'meal_name':'Evening Snack',type:'snack',diet_Percentage_value:0.1,snack1_value:0.1,snack2_value:1,'selected':[]
                             },{
-                                'id':6,'meal_name':'Dinner',type:'main','selected':[]
+                                'id':6,'meal_name':'Dinner',type:'main',diet_Percentage_value:0.20,maincource1_value:0.3,maincource2_value:0.7,sideDish1_value:0.05,sideDish2_value:0.7,'selected':[]
                             }]
                             break;
 

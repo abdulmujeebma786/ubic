@@ -1,4 +1,5 @@
 export interface IScrollTab {
-    name: string;
     selected?: boolean;
+    type_name: string;
+    item:any;
 }

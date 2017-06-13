@@ -15,7 +15,8 @@ import * as _ from 'lodash';
     templateUrl: 'planner.html'
 })
 export class PlannerPage {
-    
+    progress = 70;
+    calorieInMeal = 20;
     plannerData = JSON.parse(localStorage.getItem("planner"));
     
     

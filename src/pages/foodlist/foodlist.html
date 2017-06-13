@@ -7,6 +7,43 @@
     <ion-title>FoodList</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content class="nutrition-planner">
+<ion-content class="nutrition-food-list">
 <scroll-tabs #scrollTab [tabs]="tabs" (onSelectedTab)="tabChange($event)"></scroll-tabs>
+
+ <ion-list>
+   <span *ngFor="let item of selectedList let i = index" [attr.data-index]="i">
+        <ion-item (click)="toggleDiv(i)" class="item-main" >
+            <ion-avatar item-left>
+                <img src="{{item.img}}" *ngIf="item.img != null">
+                <img src="{{emptyImagepath}}" *ngIf="item.img == null">
+            </ion-avatar>
+            <h1>{{item.name}} </h1>
+            <ion-grid>
+              <ion-row >
+                  <ion-col >{{item.types[0].quantity}}</ion-col>
+                  <ion-col >{{item.types[0].serving_size}}</ion-col>
+                  <ion-col>
+                    <ion-icon align="right" *ngIf="!item.status" class="arrow-icon" ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+                    <ion-icon align="right" *ngIf="item.status" class="arrow-icon" ios="ios-arrow-up" md="md-arrow-up"></ion-icon>
+                  </ion-col>
+              
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+          <!--Sub Content if show when item.status is true-->
+        <ion-item *ngIf="item.status" class="subContentList">
+          <ion-grid>
+              <ion-row>
+                  <ion-col *ngFor ="let subItem of item.types">
+                      <span>
+                        <img src="{{subItem.image}}" *ngIf="subItem.image !==null">
+                        <img src="{{emptyImagepath}}" *ngIf="subItem.image ===null">
+                      </span><br>
+                      <span align="center">{{subItem.quantity}}</span>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+        </ion-item>
+   </span>
+    </ion-list>
 </ion-content>

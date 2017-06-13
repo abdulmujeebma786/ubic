@@ -22,5 +22,6 @@ export const CONSTANTS = {
             TargetdateValidation:'Please select Target Date',
             allfields:'Please fill all the fields',
             weightvalidation:'Please enter Target weight < Current weight',
-            orientation:'Please select your orientation'
+            orientation:'Please select your orientation',
+            emptyImagepath:'../assets/img/test.png'
 }

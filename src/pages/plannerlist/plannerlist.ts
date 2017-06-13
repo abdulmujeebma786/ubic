@@ -11,7 +11,9 @@ import { FoodListPage } from '../../pages/foodlist/foodlist';
 export class PlannerListPage {
     
     //  data: Array<{title: string, details: string, icon: string, showDetails: boolean}> = [];
-
+    activeTab = 0;
+    progress = 70;
+    calorieInMeal = 20
      plannerData = JSON.parse(localStorage.getItem("planner"));
      index: any; length:any;
      data:any;
@@ -28,22 +30,19 @@ export class PlannerListPage {
         }else {
             this.data = [{'sub_meal_name':'Beverages','sub_meal_id':3,'selected':[]},
                                     {'sub_meal_name':'Salads','sub_meal_id':7,'selected':[]},{'sub_meal_name':'Fruits','sub_meal_id':6,'selected':[]},{'sub_meal_name':'Soups','sub_meal_id':4,'selected':[]},{'sub_meal_name':'Sandwiches','sub_meal_id':5,'selected':[]}]
-        }
-        
-        
-        
-
-
-                    
-       
+        }   
     
+    }
+
+    tabActive(status){
+        this.activeTab = status;
     }
     toggleDetails(data) {
     
 
     
   }
-    foodList() {
+    goTofoodList() {
         this.navCtrl.push(FoodListPage);
     }
     

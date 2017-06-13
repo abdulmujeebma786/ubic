@@ -1,3 +1,58 @@
 .nutrition-planner .subMealItem {
         padding: 0px 13px!important;
+        background-color: #eef1f6;
+        border-bottom: 3px solid white;
+        min-height: 5.4rem;
+        .item-inner{
+                border-bottom: 0px!important;
+        }
+}
+
+
+.nutrition-planner .progress-outer{
+        width: 100%;
+        text-align: center;
+        background-color: #abcff5;
+        border: 1px solid #abcff5;
+        color: #fff;
+        border-radius: 2px;
+        height: 24px;
+}
+
+.nutrition-planner .progress-inner {
+        min-width: 15%;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0px;
+        border-radius: 2px;
+        background-color: #026df2;
+        height: 24px;
+        box-shadow: 0px 2px 4px 0px #9e9393;
+}
+
+.calorie-meal .toolbar-background{
+        background-color: #dcebfc;
+}
+
+.calorie-meal .toolbar-title{
+        color: #353344 !important;
+        font-size: 1.9rem;
+        font-weight: 400;
+}
+
+.myTabs .col {
+        background: #427da0;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+
+        .ion-icon {
+                padding-right: 7px;
+        }
+}
+
+.item-selection {
+        background: #386f92 !important;
 }

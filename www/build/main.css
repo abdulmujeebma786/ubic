@@ -24446,11 +24446,11 @@ ion-title {
 }
 
 .scroll-tabs {
-  height: 33px !important;
+  height: 50px !important;
 }
 
 .scroll-tabs .scroll-container {
-  height: 33px;
+  height: 50px;
   overflow: scroll;
   white-space: nowrap;
   border-bottom: 1px solid #f4f4f4;
@@ -24474,15 +24474,43 @@ ion-title {
   margin-left: 2vw;
   color: #222;
   text-transform: none !important;
+  height: 45px;
+  font-size: 20px;
 }
 
 .scroll-tabs .scroll-container .section .tab9-button.selected {
-  color: #488aff;
-  border-bottom: 3px solid #32db64;
+  color: #353344;
+  border-bottom: 3px solid #353344;
+  height: 45px;
+  font-size: 22px;
 }
 
 .scroll-tabs .scroll-container .section .tab9-button.three {
   width: 29vw;
+}
+
+.nutrition-food-list .item-main {
+  border-bottom: .5px solid gray !important;
+}
+
+.nutrition-food-list ion-avatar img {
+  width: 60px;
+  height: 60px;
+}
+
+.nutrition-food-list .item-inner {
+  border-bottom: none !important;
+}
+
+.nutrition-food-list .arrow-icon {
+  float: right;
+  font-size: 39px;
+  margin-top: -24px;
+}
+
+.subContentList {
+  background: #061648;
+  border-bottom: 1px solid;
 }
 
 .goal-content h1 {
@@ -24583,7 +24611,7 @@ td, th {
   margin: 22px;
 }
 
-.progress-outer {
+.home-page .progress-outer {
   width: 96%;
   text-align: center;
   background-color: #e1e4eb;
@@ -24593,7 +24621,7 @@ td, th {
   height: 17px;
 }
 
-.progress-inner {
+.home-page .progress-inner {
   min-width: 15%;
   white-space: nowrap;
   overflow: hidden;
@@ -24782,8 +24810,8 @@ td, th {
   content: "";
 }
 
-.nutrition-planner .border {
-  border-right: 1px solid gray;
+.ion-ios-add {
+  font-weight: bold;
 }
 
 .nutrition-planner .planner-list {
@@ -24792,12 +24820,104 @@ td, th {
   margin-top: 13px;
 }
 
-.ion-ios-add {
-  font-weight: bold;
+.nutrition-planner .progress-outer {
+  width: 100%;
+  text-align: center;
+  background-color: #abcff5;
+  border: 1px solid #abcff5;
+  color: #fff;
+  border-radius: 2px;
+  height: 24px;
+}
+
+.nutrition-planner .progress-inner {
+  min-width: 15%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0px;
+  border-radius: 2px;
+  background-color: #026df2;
+  height: 24px;
+  box-shadow: 0px 2px 4px 0px #9e9393;
+}
+
+.nutrition-planner .border {
+  border-right: 1px solid gray;
+}
+
+.diet-meal .toolbar-background {
+  background-color: #dcebfc;
+}
+
+.diet-meal .toolbar-title {
+  color: #353344 !important;
+  font-size: 1.9rem;
+  font-weight: 400;
 }
 
 .nutrition-planner .subMealItem {
   padding: 0px 13px !important;
+  background-color: #eef1f6;
+  border-bottom: 3px solid white;
+  min-height: 5.4rem;
+}
+
+.nutrition-planner .subMealItem .item-inner {
+  border-bottom: 0px !important;
+}
+
+.nutrition-planner .progress-outer {
+  width: 100%;
+  text-align: center;
+  background-color: #abcff5;
+  border: 1px solid #abcff5;
+  color: #fff;
+  border-radius: 2px;
+  height: 24px;
+}
+
+.nutrition-planner .progress-inner {
+  min-width: 15%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0px;
+  border-radius: 2px;
+  background-color: #026df2;
+  height: 24px;
+  box-shadow: 0px 2px 4px 0px #9e9393;
+}
+
+.calorie-meal .toolbar-background {
+  background-color: #dcebfc;
+}
+
+.calorie-meal .toolbar-title {
+  color: #353344 !important;
+  font-size: 1.9rem;
+  font-weight: 400;
+}
+
+.myTabs .col {
+  background: #427da0;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.myTabs .col .ion-icon {
+  padding-right: 7px;
+}
+
+.item-selection {
+  background: #386f92 !important;
+}
+
+.divider-header {
+  background: #bdcbdd;
+  color: #5a6169;
+  font-size: 18px;
 }
 
 .overview-content .radio-text {
@@ -24835,7 +24955,6 @@ td, th {
 .meals-grid {
   border-bottom: 1px solid #C9C9C9;
   text-align: center;
-  /*background: linear-gradient(to bottom, rgb(223, 225, 230) 0%, rgb(231, 230, 236) 50%, rgba(176, 197, 255, 0.36) 51%, rgba(159, 236, 236, 0.69) 100%);*/
   background: #fff;
   /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */

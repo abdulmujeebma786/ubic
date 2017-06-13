@@ -11,6 +11,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { GoalPage } from '../pages/goal/goal';
 import { TrackersPage } from '../pages/trackers/trackers';
 import { LoginPage } from '../pages/login/login';
+// import { ProgrameOverviewPage } from '../pages/Programe_overview/Programe_overview';
 @Component({
   templateUrl: 'app.html'
 })

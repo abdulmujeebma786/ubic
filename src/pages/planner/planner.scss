@@ -113,16 +113,56 @@
 	content: "";
 }
 
-.nutrition-planner .border {
-	border-right: 1px solid gray;
-}
-
-.nutrition-planner .planner-list{
-	margin-left: -44px;
-    margin-bottom: 8px;
-    margin-top: 13px;
-}
-
 .ion-ios-add {
 	font-weight: bold;
+}
+
+
+.nutrition-planner {
+	
+	.planner-list{
+		margin-left: -44px;
+		margin-bottom: 8px;
+		margin-top: 13px;
+	}
+	.progress-outer{
+        width: 100%;
+        text-align: center;
+        background-color: #abcff5;
+        border: 1px solid #abcff5;
+        color: #fff;
+        border-radius: 2px;
+        height: 24px;
+	}
+	.progress-inner {
+        min-width: 15%;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0px;
+        border-radius: 2px;
+        background-color: #026df2;
+        height: 24px;
+        box-shadow: 0px 2px 4px 0px #9e9393;
+	}
+
+	.border {
+		border-right: 1px solid gray;
+	}
+}
+
+.diet-meal {
+	
+	.toolbar-background{
+        background-color: #dcebfc;
+	}
+
+	// .border {
+	// 	border-right: 1px solid red;
+	// }
+
+	.toolbar-title{
+        color: #353344 !important;
+        font-size: 1.9rem;
+        font-weight: 400;
+	}
 }

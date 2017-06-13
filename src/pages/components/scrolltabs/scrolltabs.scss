@@ -1,7 +1,7 @@
 .scroll-tabs {
-  height: 33px !important;
+  height: 50px !important;
   .scroll-container {
-    height: 33px;
+    height: 50px;
     overflow: scroll;
     white-space: nowrap;
     border-bottom: 1px solid color($colors, light);
@@ -12,6 +12,7 @@
       overflow-x: scroll;
       overflow-y: hidden;
       padding-bottom: 0;
+      
       .tab9-button {
         border-radius: 0;
         padding-bottom: 3px;
@@ -21,10 +22,14 @@
         margin-left: 2vw;
         color: color($colors, dark);
         text-transform: none !important;
+        height:45px;
+        font-size: 20px;
       }
       .tab9-button.selected {
-        color: color($colors, primary);
-        border-bottom: 3px solid color($colors, secondary);
+        color: #353344;
+        border-bottom: 3px solid #353344;
+        height:45px;
+        font-size: 22px;
       }
       .tab9-button.three {
         width: 29vw;
