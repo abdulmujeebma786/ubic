@@ -3,7 +3,7 @@
     <div class="menu-header" align="center">
       <img src="../assets/img/logo.png">
     </div>
-    <ion-list>
+    <ion-list class="menu-list">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
        <ion-icon ios="{{p.icon}}" md="{{p.md}}"></ion-icon> {{p.title}}
       </button>

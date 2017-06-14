@@ -40,7 +40,7 @@
     <ion-grid padding class="meals-grid">
          <div class="ranger-div-body">
             <span class="text-A">Physical Activity Level:</span>
-            <ion-segment >
+            <ion-segment [(ngModel)]="activityLevel" (click)="setActivity()">
                 <ion-segment-button  value="1">1</ion-segment-button>
                 <ion-segment-button value="2">2</ion-segment-button>
                 <ion-segment-button value="3">3</ion-segment-button>

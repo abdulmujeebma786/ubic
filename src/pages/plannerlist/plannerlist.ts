@@ -26,7 +26,7 @@ export class PlannerListPage {
         
         if(this.plannerData[this.index].type !== 'snack'){
             this.data = [{'sub_meal_name':'Main course','sub_meal_id':1,'selected':[]},
-                                    {'sub_meal_name':'SideDish','sub_meal_id':2,'selected':[]}]
+                                    {'sub_meal_name':'SideDish1','sub_meal_id':2,'selected':[]},{'sub_meal_name':'SideDish2','sub_meal_id':2,'selected':[]},{'sub_meal_name':'SideDish3','sub_meal_id':2,'selected':[]}]
         }else {
             this.data = [{'sub_meal_name':'Beverages','sub_meal_id':3,'selected':[]},
                                     {'sub_meal_name':'Salads','sub_meal_id':7,'selected':[]},{'sub_meal_name':'Fruits','sub_meal_id':6,'selected':[]},{'sub_meal_name':'Soups','sub_meal_id':4,'selected':[]},{'sub_meal_name':'Sandwiches','sub_meal_id':5,'selected':[]}]
@@ -42,7 +42,8 @@ export class PlannerListPage {
 
     
   }
-    goTofoodList() {
+    goTofoodList(data) {
+        console.log(data);
         this.navCtrl.push(FoodListPage);
     }
     

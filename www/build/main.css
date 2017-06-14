@@ -24326,6 +24326,10 @@ ion-navbar.toolbar {
   color: white;
 }
 
+.menu-list .label {
+  font-size: 24px !important;
+}
+
 .body-details-content .radio-text {
   padding: 4px;
 }
@@ -24846,7 +24850,8 @@ td, th {
 }
 
 .diet-meal .toolbar-background {
-  background-color: #dcebfc;
+  background-color: #e0f8ff;
+  border-bottom: 1px solid gray;
 }
 
 .diet-meal .toolbar-title {

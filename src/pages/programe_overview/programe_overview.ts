@@ -36,6 +36,11 @@ export class ProgrameOverviewPage {
         console.log(this.accelarate);
         this.accelarate = '';
     }
+
+    setActivity(){
+
+    }
+    
     SubmitMeals(){
         if(this.SharedService.validation(this.orientation)){
             this.SharedService.alertFunction(CONSTANTS.orientation);
