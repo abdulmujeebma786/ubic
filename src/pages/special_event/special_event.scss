@@ -8,3 +8,32 @@
     border-bottom: 1px solid;
     margin-top: -24px;
 }
+
+.segment-md .segment-button {
+  line-height: 2rem;
+  height: 25px;
+  margin-right: 11px;
+}
+
+ion-segment {
+  .seg1{
+    background-color: #D6DAE3 !important;
+  }
+
+  .seg2{
+    background-color: #B2CAE8 !important;
+  }
+
+  .seg3{
+    background-color: #75AEEC !important;
+  }
+
+  .seg4{
+    background-color: #2F90EE !important;
+  }
+
+  .seg5{
+    background-color: #047aed !important;
+  }
+
+}

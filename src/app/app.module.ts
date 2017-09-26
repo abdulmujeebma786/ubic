@@ -2,10 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
-import { NgCalendarModule  } from 'ionic2-calendar';
 import { CommonService } from '../pages/services/common.service';
 import { SharedService } from '../pages/services/shared.service';
-
+import { NgCalendarModule  } from 'ionic2-calendar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CoachPage } from '../pages/coach/coach';
@@ -28,7 +27,7 @@ import { PlannerListPage } from '../pages/plannerlist/plannerlist';
 import { FoodListPage } from '../pages/foodlist/foodlist';
 import { AnalysisPage } from '../pages/plannerlist/analysis/analysis';
 import { ScrollTabsComponent } from '../pages/components/scrolltabs';
-
+import { newTrack } from '../pages/trackers/newtrack/newTrack'
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -42,13 +41,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage, SignupPage,
     forgetPasswordPage, GoalPage,TargetPage, BodyDetails, MedicalCondetions,SpecialPromoModel,
     Results, ProgrameOverviewPage, SpecialEventPage, SettingsPage, TrackersPage, PlannerPage,ScrollTabsComponent,
-    PlannerListPage, FoodListPage, AnalysisPage
+    PlannerListPage, FoodListPage, AnalysisPage, newTrack
   ],
   imports: [
     BrowserModule,
     NgCalendarModule,
     HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      backButtonIcon: 'ios-arrow-back',
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

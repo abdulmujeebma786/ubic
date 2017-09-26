@@ -16,50 +16,62 @@ import { CONSTANTS } from '../services/config.service';
 })
 export class SignupPage {
     signup = {
-        name :'',
+        name: '',
         email: '',
-        pass:'',
-        location:''
+        pass: '',
+        location: ''
     }
+    locations :any;
     constructor(public navCtrl: NavController, public shared: SharedService, public _commonservice: CommonService) {
-        
+        this.getLocation();
     }
 
-    submitSignup(data){
-        if(this.shared.validation(data.name)){
+    getLocation() {
+
+        this._commonservice.httpGetMethodCall('locations').subscribe(
+            response => {
+                this.locations = response;
+            },
+            error => {
+                this.shared.errorHandling(error);
+            });
+    }
+
+    submitSignup(data) {
+        if (this.shared.validation(data.name)) {
             this.shared.alertFunction(CONSTANTS.ValidName);
             return
         }
-        if(this.shared.validation(data.email)){
+        if (this.shared.validation(data.email)) {
             this.shared.alertFunction(CONSTANTS.validEmail);
             return
         }
-        if(this.shared.validation(data.pass)){
+        if (this.shared.validation(data.pass)) {
             this.shared.alertFunction(CONSTANTS.EmptyPassword);
             return
         }
-        if(this.shared.validation(data.location)){
+        if (this.shared.validation(data.location)) {
             this.shared.alertFunction(CONSTANTS.selectLocation);
             return
         }
 
-        this._commonservice.httpPostMethodCall('userRegistration',data). subscribe(
-			response => {
-				if(response.status == 1){
+        this._commonservice.httpPostMethodCall('userRegistration', data).subscribe(
+            response => {
+                if (response.status == 1) {
                     this.navCtrl.push(GoalPage);
-                    localStorage.setItem("userData",response.data);
+                    localStorage.setItem("userData", JSON.stringify(response.data));
                 }
-                else if(response.status == 2){
+                else if (response.status == 2) {
                     this.shared.alertFunction(CONSTANTS.EmailExist);
                 }
-			},
-	      	error => {
-				this.shared.errorHandling(error);
-			});
+            },
+            error => {
+                this.shared.errorHandling(error);
+            });
 
     }
 
-    goToLogin(){
+    goToLogin() {
         this.navCtrl.push(LoginPage);
     }
 }

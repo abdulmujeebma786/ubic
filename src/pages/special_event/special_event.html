@@ -1,27 +1,26 @@
-
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-navbar>
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>SPECIAL EVENT</ion-title>
-  </ion-navbar>
+        <ion-title>SPECIAL EVENT</ion-title>
+    </ion-navbar>
 </ion-header>
 <ion-content class="overview-content special-event">
     <ion-grid padding class="meals-grid">
         <div padding align="center">What's your special Event?</div>
-            <ion-row>
-                <ion-col col-2></ion-col>
-                <ion-col col-8>
-                    <ion-select multiple="false" [(ngModel)]="special.event">
-                        <ion-option  value="Getting Engaged">Getting Engaged</ion-option>
-                        <ion-option value="extra cheese">Wedding</ion-option>
-                        <ion-option value="A Sports Event">A Sports Event</ion-option>
-                        <ion-option value="Vacation">Vacation</ion-option>
-                    </ion-select>
-                </ion-col>
-                <ion-col col-2></ion-col>
-            </ion-row>
+        <ion-row>
+            <ion-col col-2></ion-col>
+            <ion-col col-8>
+                <ion-select multiple="false" [(ngModel)]="special.event">
+                    <ion-option value="Getting Engaged">Getting Engaged</ion-option>
+                    <ion-option value="extra cheese">Wedding</ion-option>
+                    <ion-option value="A Sports Event">A Sports Event</ion-option>
+                    <ion-option value="Vacation">Vacation</ion-option>
+                </ion-select>
+            </ion-col>
+            <ion-col col-2></ion-col>
+        </ion-row>
     </ion-grid>
 
     <ion-grid class="meals-grid" padding>
@@ -39,15 +38,15 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-     <ion-grid padding class="meals-grid">
-         <div class="ranger-div-body">
+    <ion-grid padding class="meals-grid">
+        <div class="ranger-div-body">
             <span class="text-A">Accelarate:</span>
             <ion-segment [(ngModel)]="special.accelarate">
-                <ion-segment-button  value="1">1</ion-segment-button>
-                <ion-segment-button value="2">2</ion-segment-button>
-                <ion-segment-button value="3">3</ion-segment-button>
-                <ion-segment-button value="4">4</ion-segment-button>
-                 <ion-segment-button value="5">5</ion-segment-button>
+                <ion-segment-button class="seg1" value="1">1</ion-segment-button>
+                <ion-segment-button class="seg2" value="2">2</ion-segment-button>
+                <ion-segment-button class="seg3" value="3">3</ion-segment-button>
+                <ion-segment-button class="seg4" value="4">4</ion-segment-button>
+                <ion-segment-button class="seg5" value="5">5</ion-segment-button>
             </ion-segment>
         </div>
 
@@ -57,5 +56,5 @@
     </ion-grid>
 
 
-     
+
 </ion-content>

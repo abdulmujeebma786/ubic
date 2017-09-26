@@ -8,6 +8,14 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
+  <!--<ion-fab top right edge (click)="addtrack()">
+    <button  ion-fab mini><ion-icon name="add"></ion-icon></button>
+  </ion-fab>-->
+  <ion-fab bottom right>
+  <button (click)="addtrack()" ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+
+
     <ion-card>
       <ion-card-header>
         Line Chart

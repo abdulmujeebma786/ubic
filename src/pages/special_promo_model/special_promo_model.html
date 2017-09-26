@@ -5,8 +5,8 @@
         </ion-title>
         <ion-buttons start>
             <button ion-button (click)="dismiss()">
-                <span ion-text color="primary" showWhen="ios">Cancel</span>
-                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+                <!--<span ion-text color="primary" showWhen="ios">Cancel</span>-->
+                <ion-icon name="md-close" ></ion-icon>
             </button>
         </ion-buttons>
     </ion-toolbar>
@@ -14,6 +14,18 @@
 
 <ion-content>
     <div>
-        <img src="../assets/img/complete.png">
+        <img src="assets/img/special_promo.png">
     </div>
+    <ion-list >
+        <ion-item (click)="specialEvent()">
+            <ion-icon  item-right name="ios-arrow-forward"></ion-icon>
+            <h2 align="center"><b>SPECIAL EVENTS</b></h2><br>
+            <p align="center">(Validity : Till end of program)</p>
+        </ion-item>
+        <ion-item (click)="dismiss()">
+            <ion-icon  item-right name="ios-arrow-forward"></ion-icon>
+            <h2 align="center"><b>BUY Rs :360</b></h2><br>
+            <p align="center">(Validity : 3 months , Free for now)</p>
+        </ion-item>
+    </ion-list>
 </ion-content>

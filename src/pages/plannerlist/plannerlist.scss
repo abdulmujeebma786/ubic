@@ -14,13 +14,14 @@
         text-align: center;
         background-color: #abcff5;
         border: 1px solid #abcff5;
-        color: #fff;
+        color: #353344;
         border-radius: 2px;
         height: 24px;
+        
 }
 
 .nutrition-planner .progress-inner {
-        min-width: 15%;
+        min-width: 0%;
         white-space: nowrap;
         overflow: hidden;
         padding: 0px;
@@ -28,10 +29,15 @@
         background-color: #026df2;
         height: 24px;
         box-shadow: 0px 2px 4px 0px #9e9393;
+        margin-top: -6%;
 }
 
 .calorie-meal .toolbar-background{
         background-color: #dcebfc;
+}
+
+.toolbar-title {
+        overflow: inherit;
 }
 
 .calorie-meal .toolbar-title{
@@ -55,4 +61,11 @@
 
 .item-selection {
         background: #386f92 !important;
+}
+
+.nutrition-planner-list {
+        .selected-div {
+                background-color: transparent!important;
+
+        }
 }

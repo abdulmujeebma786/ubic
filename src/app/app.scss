@@ -14,6 +14,15 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+    font-family: "Dinpro";
+    src: url("../fonts/Font_Dinpro/DINPro-Regular.ttf") /* TTF file for CSS3 browsers */
+}
+h1, h2, h3, h4, h5, h6, p, div, span {
+    font-family: 'Dinpro' !important;
+}
+
 .menu-header {
     height: 124px;
     background: #f5f5f5;
@@ -28,5 +37,22 @@
 }
 
 .menu-list .label {
-    font-size: 24px!important;
+    font-size: 17px!important;
+}
+
+.segment-md .segment-button {
+  color: #353344;
+}
+
+.platform-android .segment-md .segment-button {
+    border: 1px solid rgba(72, 45, 45, 0.12) !important;
+    border-radius: 50%;
+}
+
+.platform-android .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    border-color: #353344 !important; 
+}
+
+ion-title {
+    padding: 0 50px 0px !important;
 }

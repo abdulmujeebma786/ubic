@@ -1,51 +1,50 @@
-
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>PROGRAM OVERVIEW</ion-title>
-  </ion-navbar>
+<ion-header class="overview-header">
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="menu-title">PROGRAM OVERVIEW</ion-title>
+    </ion-navbar>
 </ion-header>
 <ion-content class="overview-content">
     <ion-grid padding class="meals-grid">
         <div padding align="center">How many meals today?</div>
         <ion-row class="radio-row" align="center">
             <ion-col>
-                <div class="radio-text"><input (click)="setPlanner('4')" type="radio"  name='meals' value="4" [(ngModel)]="orientation"> 4</div>
+                <div class="radio-text"><input (click)="setPlanner('4')" type="radio" name='meals' value="4" [(ngModel)]="mealsCount"> 4</div>
             </ion-col>
             <ion-col>
-                <div class="radio-text"> <input (click)="setPlanner('5')" name='meals'  type="radio" value="5" [(ngModel)]="orientation"> 5</div>
+                <div class="radio-text"> <input (click)="setPlanner('5')" name='meals' type="radio" value="5" [(ngModel)]="mealsCount"> 5</div>
             </ion-col>
             <ion-col>
-                <div class="radio-text"> <input (click)="setPlanner('6')" name='meals'  type="radio" value="6" [(ngModel)]="orientation"> 6</div>
+                <div class="radio-text"> <input (click)="setPlanner('6')" name='meals' type="radio" value="6" [(ngModel)]="mealsCount"> 6</div>
             </ion-col>
         </ion-row>
     </ion-grid>
 
     <!--Special event-->
-     <ion-grid padding class="meals-grid">
-         <div class="ranger-div-body">
+    <ion-grid padding class="meals-grid">
+        <div class="ranger-div-body">
             <span class="text-A">Accelarate:</span>
             <ion-segment [(ngModel)]="accelarate" (click)="checkAccelarate()">
-                <ion-segment-button  value="1">1</ion-segment-button>
-                <ion-segment-button value="2">2</ion-segment-button>
-                <ion-segment-button value="3">3</ion-segment-button>
-                <ion-segment-button value="4">4</ion-segment-button>
-                 <ion-segment-button value="5">5</ion-segment-button>
+                <ion-segment-button class="seg1" value="1">1</ion-segment-button>
+                <ion-segment-button class="seg2" value="2">2</ion-segment-button>
+                <ion-segment-button class="seg3" value="3">3</ion-segment-button>
+                <ion-segment-button class="seg4" value="4">4</ion-segment-button>
+                <ion-segment-button class="seg5" value="5">5</ion-segment-button>
             </ion-segment>
         </div>
     </ion-grid>
 
     <ion-grid padding class="meals-grid">
-         <div class="ranger-div-body">
+        <div class="ranger-div-body">
             <span class="text-A">Physical Activity Level:</span>
             <ion-segment [(ngModel)]="activityLevel" (click)="setActivity()">
-                <ion-segment-button  value="1">1</ion-segment-button>
-                <ion-segment-button value="2">2</ion-segment-button>
-                <ion-segment-button value="3">3</ion-segment-button>
-                <ion-segment-button value="4">4</ion-segment-button>
-                 <ion-segment-button value="5">5</ion-segment-button>
+                <ion-segment-button class="seg seg1" value=1>1</ion-segment-button>
+                <ion-segment-button class="seg seg2" value=2>2</ion-segment-button>
+                <ion-segment-button class="seg seg3" value=3>3</ion-segment-button>
+                <ion-segment-button class="seg seg4" value=4>4</ion-segment-button>
+                <ion-segment-button class="seg seg5" value=5>5</ion-segment-button>
             </ion-segment>
         </div>
         <div align="center" padding>
@@ -53,6 +52,6 @@
         </div>
     </ion-grid>
 
-     
+
 
 </ion-content>

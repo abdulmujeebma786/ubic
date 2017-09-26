@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { CalendarComponent } from 'ionic2-calendar/calendar';
-import { MonthViewComponent } from 'ionic2-calendar/monthview';
-// import { WeekViewComponent } from 'ionic2-calendar/weekview';
-// import { DayViewComponent } from 'ionic2-calendar/dayview';
-
+import { CommonService } from '../services/common.service';
+import { SharedService } from '../services/shared.service';
+import { homeData } from './homedata';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
- progress = 70;
-  constructor(public navCtrl: NavController) {
-
+   progress = 70;
+   homeData = new homeData();
+   specialData:any;
+  constructor(public navCtrl: NavController, public _commonService: CommonService, public SharedService: SharedService) {
+    this.initialization()
   }
 
-eventSource;
+    eventSource;
     viewTitle;
     isToday: boolean;
     calendar = {
@@ -89,9 +89,49 @@ eventSource;
     onRangeChanged(ev) {
         console.log('range changed: startTime: ' + ev.startTime + ', endTime: ' + ev.endTime);
     }
+
+    initialization(){
+        
+    }
     markDisabled = (date:Date) => {
         var current = new Date();
         current.setHours(0, 0, 0);
         return date < current;
     };  
+    ngOnInit(){
+
+        var userData = JSON.parse(localStorage.getItem("userData"));
+        userData.user_id = 6;
+        this._commonService.httpPostMethodCall('getHomedata', { 'userid': userData.user_id }).subscribe(
+        response => {
+            console.log(response);
+
+            this.homeData = response.data;
+            this.specialData = response.specialData;
+            localStorage.setItem("Calory_Diet",this.homeData.body_calory_diet);
+            if (response.status) {
+
+            }
+        },
+        error => {
+            this.SharedService.errorHandling(error);
+        });
+        // var data = {
+        //     user_id: 4,
+        //     orientation: 1,
+        //     location: 1,
+        //     meal: 4,
+        //     sub_meal: 1,
+        //     calorie0: 10,
+        //     calorie1: 1000000
+        //     }
+
+        //     this._commonService.httpPostMethodAdmin('user_foods', data).subscribe(
+        //     response => {
+        //         console.log(data)
+        //     },
+        //     error => {
+        //         this.SharedService.errorHandling(error);
+        //     });
+    }
 }

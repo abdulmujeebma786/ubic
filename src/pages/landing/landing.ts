@@ -12,22 +12,25 @@ import { SignupPage } from '../signup/signup';
 })
 export class LandingPage {
 
-    slides: Array<{id: number, img: any}>;
+    slides: Array<{ id: number, img: any }>;
     constructor(public navCtrl: NavController) {
-    this.slides = [
-        {id:1,img:'../../assets/img/land1.jpg'},
-        {id:2,img:'../../assets/img/land2.jpg'},
-        {id:3,img:'../../assets/img/land3.jpg'},
-        {id:4,img:'../../assets/img/land4.jpg'}
+
+        this.slides = [
+            { id: 1, img: 'assets/img/land1.jpg' },
+            { id: 2, img: 'assets/img/land2.jpg' },
+            { id: 3, img: 'assets/img/land3.jpg' },
+            { id: 4, img: 'assets/img/land4.jpg' }
         ]
     }
 
-//    LOGIN PAGE REDIRECTION
-    goToLogin(){
+    //    LOGIN PAGE REDIRECTION
+    goToLogin() {
         this.navCtrl.push(LoginPage);
+        localStorage.setItem("newuser", '1')
     }
 
-    goToSignup(){
+    goToSignup() {
+        localStorage.setItem("newuser", '1')
         this.navCtrl.push(SignupPage);
     }
 

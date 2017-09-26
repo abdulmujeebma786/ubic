@@ -5,13 +5,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { CoachPage } from '../pages/coach/coach';
-import { LandingPage} from '../pages/landing/landing'
-import { TargetPage } from '../pages/target/target';
+import { LandingPage } from '../pages/landing/landing'
 import { SettingsPage } from '../pages/settings/settings';
-import { GoalPage } from '../pages/goal/goal';
 import { TrackersPage } from '../pages/trackers/trackers';
 import { LoginPage } from '../pages/login/login';
-// import { ProgrameOverviewPage } from '../pages/Programe_overview/Programe_overview';
+import { GoalPage } from '../pages/goal/goal'
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,20 +18,21 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // rootPage: any = GoalPage;
-  rootPage: any = HomePage;
+  rootPage: any;
 
-  pages: Array<{title: string, component: any, icon: any, md:any}>;
+  pages: Array<{ title: string, component: any, icon: any, md: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
+    // Sidemenu tabs
     this.pages = [
-      { title: 'Profile', component: HomePage, icon:'ios-person', md:'md-person'},
-      { title: 'Nutrition', component: CoachPage, icon: 'ios-nutrition', md:'md-nutrition' },
-      { title: 'Trackers', component: TrackersPage, icon:'ios-analytics', md:'md-analytics'},
-      { title: 'Settings', component: SettingsPage, icon:'ios-settings', md:'md-settings' }
+      { title: 'Profile', component: HomePage, icon: 'ios-person', md: 'md-person' },
+      { title: 'Nutrition', component: CoachPage, icon: 'ios-nutrition', md: 'md-nutrition' },
+      { title: 'Trackers', component: TrackersPage, icon: 'ios-analytics', md: 'md-analytics' },
+      { title: 'Settings', component: SettingsPage, icon: 'ios-settings', md: 'md-settings' }
     ];
+
+    // console.log(JSON.parse(localStorage.getItem("userData")));
 
   }
 
@@ -42,6 +42,33 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      /*
+      @This local storage checking is to check wether the user display the app demo on landing page 
+      */
+      // this.rootPage = GoalPage;
+
+      if (localStorage.getItem("newuser") == '' || localStorage.getItem("newuser") == 'null' || localStorage.getItem("newuser") == null || localStorage.getItem("newuser") == ('null')) {
+        this.rootPage = LandingPage;
+      } else {
+        // Check user already logined or not
+        if (localStorage.getItem("userData") == '' || localStorage.getItem("userData") == 'null' || localStorage.getItem("userData") == null || localStorage.getItem("userData") == ('null')) {
+          this.rootPage = LoginPage;
+        } else {
+          // To check the user entered body details
+          if(localStorage.getItem("Calory_Diet")==''|| localStorage.getItem("Calory_Diet")=='null' || localStorage.getItem("Calory_Diet")==null || localStorage.getItem("Calory_Diet")==('null'))
+          {
+            this.rootPage = GoalPage;
+          }else {
+            this.rootPage = HomePage;
+          }
+
+        }
+      }
+
+
+
+
+
     });
   }
 

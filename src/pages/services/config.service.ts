@@ -10,6 +10,7 @@ export const BASE_URL: string = "http://ubicfitness.com/mobileApp/ApiV2/App.php?
 export const ADMIN_URL: string = "http://ubicfitness.com/newadmin/pjt/api/"
 
 
+
 export const CONSTANTS = {
             EmptyUsername:'Please enter username',
             EmptyPassword:'Please enter Password',
@@ -22,6 +23,10 @@ export const CONSTANTS = {
             TargetdateValidation:'Please select Target Date',
             allfields:'Please fill all the fields',
             weightvalidation:'Please enter Target weight < Current weight',
-            orientation:'Please select your orientation',
-            emptyImagepath:'../assets/img/test.png'
+            mealsCount:'Please select how many meals today',
+            emptyImagepath:'../assets/img/test.png',
+            coachTypeSpecial:'specialEvent',
+            coachTypeRegular:'regular',
+            specialevent:'You are on the Special Events program',
+            selectionOver:'You exceeded your calorie'
 }

@@ -2,8 +2,8 @@
  * Created by ubic on 23/04/17.
  */
 import { Component } from '@angular/core';
-import { ModalController, NavController, Platform, ViewController, NavParams } from 'ionic-angular';
-import { FoodListPage } from '../../pages/foodlist/foodlist';
+import { NavController, ViewController, NavParams } from 'ionic-angular';
+// import { FoodListPage } from '../../pages/foodlist/foodlist';
 @Component({
     selector: 'analysis',
     templateUrl: 'analysis.html'

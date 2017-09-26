@@ -3,7 +3,9 @@
  */
 import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
-import { HomePage } from '../../pages/home/home';
+import { SharedService } from '../services/shared.service';
+
+// import { HomePage } from '../../pages/home/home';
 
 @Component({
     selector: 'settings',
@@ -11,10 +13,21 @@ import { HomePage } from '../../pages/home/home';
 })
 export class SettingsPage {
 
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, private _sharedService: SharedService) {
 
         
 
+    }
+
+    logout(){
+        // localStorage.setItem('userData','');
+
+
+        this._sharedService.confirmation('Logout','Do you want to logout?',this.success)
+    }
+
+    success(){
+            console.log("test")
     }
 
 }

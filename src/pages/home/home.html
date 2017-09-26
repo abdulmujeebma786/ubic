@@ -1,31 +1,33 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-
- <!--<ion-toolbar>
-   <ion-navbar>
-    <ion-title>{{viewTitle}}</ion-title>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Home</ion-title>
     </ion-navbar>
- </ion-toolbar>-->
-<!--#f2f8fd-->
 </ion-header>
 
 <ion-content class="home-page">
-    <div margin class="main-content">
-        <p class="meals-planned"> Meals Planned : 42</p>
-        <p class="diet-planned">Diets Planned : 16/31</p>
-                <div padding>
-            <img src="assets/img/logo.png">
+    <div class="main-content">
+
+        <div padding>
+            <img src="assets/img/home.jpg">
         </div>
         <div margin class="area-progress">
+
+            <p class="meals-planned">Meals Planned : 0</p>
+            <p class="diet-planned">Diets Planned : 16/31</p>
+            <p class="diet-planned">Current Weight : {{homeData.body_current_weight}}</p>
+            <p class="diet-planned">Current Height : {{homeData.body_current_height}}</p>
+            <p class="diet-planned">Target Weight : {{homeData.body_target_weight}}</p>
             <ion-grid>
-                <ion-row >
-                    <ion-col col-8><p>Today's Calorie Intake</p></ion-col>
-                    <ion-col col-4><p  align="right"><span>12222</span>cal</p></ion-col>
+                <ion-row>
+                    <ion-col col-8>
+                        <p>Today's Calorie Intake</p>
+                    </ion-col>
+                    <ion-col col-4>
+                        <p align="right"><span>12222</span>cal</p>
+                    </ion-col>
                 </ion-row>
             </ion-grid>
             <div padding>
@@ -37,30 +39,30 @@
             </div>
         </div>
     </div>
-    <div margin class="sub-content">
+    <!--<div margin class="sub-content">
         <ion-grid>
             <ion-row>
                 <ion-col class="col1">Current Weight
-                    <br>60 kg<br>
+                    <br><span>{{homeData.body_current_weight}}</span>
                 </ion-col>
-                <ion-col class="col2">Target Weight<br>55 kg</ion-col>
+                <ion-col class="col2">Current Height<br><span>55 kg</span></ion-col>
             </ion-row>
             <ion-row>
                 <ion-col class="col1">Current Weight
-                    <br>60 kg<br>
+                    <br><span>60 kg</span><br>
                 </ion-col>
-                <ion-col class="col2">Target Weight<br>55 kg</ion-col>
+                <ion-col class="col2">Target Weight<br><span>55 kg</span></ion-col>
             </ion-row>
         </ion-grid>
-    </div>
+    </div>-->
 
 
 </ion-content>
 
 
 
-   <!--<ion-content class="has-header home-content">-->
-    <!--<calendar [eventSource]="eventSource"
+<!--<ion-content class="has-header home-content">-->
+<!--<calendar [eventSource]="eventSource"
               [calendarMode]="calendar.mode"
               [currentDate]="calendar.currentDate"
               (onCurrentDateChanged)="onCurrentDateChanged($event)"

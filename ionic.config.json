@@ -1,6 +1,8 @@
 {
   "name": "ubicFitness",
   "app_id": "b71abf75",
-  "v2": true,
-  "typescript": true
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

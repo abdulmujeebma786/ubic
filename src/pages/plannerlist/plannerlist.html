@@ -7,33 +7,36 @@
     <ion-title>{{mealName | uppercase}}</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content class="nutrition-planner">
-
+<ion-content class="nutrition-planner nutrition-planner-list">
   <div class="progress-outer">
-      <div class="progress-inner" [style.width]="progress + '%'">
-          {{progress}}%
+    {{calorieProgress}}%
+      <div class="progress-inner" [style.width]="calorieProgress + '%'">
+          
       </div>
   </div>
    <ion-toolbar class="calorie-meal">
     <ion-title>CALORIE IN MEAL - {{calorieInMeal}}</ion-title>
   </ion-toolbar>
-    <ion-row class="myTabs">
+    <!--<ion-row class="myTabs">
       <ion-col [ngClass]="{'item-selection':activeTab==0 }" (click)="tabActive(0)"> <ion-icon ios="ios-pie" md="md-pie"></ion-icon>BALANCE</ion-col>
       <ion-col [ngClass]="{'item-selection':activeTab==1 }" (click)="tabActive(1)"> <ion-icon ios="ios-pie" md="md-pie"></ion-icon>ANALYSIS</ion-col>
-    </ion-row>
+    </ion-row>-->
 
 <analysis *ngIf="activeTab == 1"></analysis>
   <ion-list *ngIf="activeTab == 0">
     <ion-item padding *ngFor="let item of data" class="subMealItem" (click)="goTofoodList(item)">
       <ion-icon  item-right name="ios-arrow-forward"></ion-icon>
         <h2>{{item.sub_meal_name}}</h2>
-        <ion-item *ngIf="item.selected.length >0">
-            <ion-avatar item-left>
-                <img src="../assets/img/test.png">
-            </ion-avatar>
-            <h2>Cher</h2>
-            <p>Ugh. As if.</p>
-        </ion-item>
+        <span *ngFor="let subMealsSelected of selectedArray" >
+          <ion-item class="selected-div" *ngIf="subMealsSelected.subplannerid == item.sub_meal_id && subMealsSelected.plannerid == plannerId">
+              <ion-avatar item-left>
+                  <img *ngIf="subMealsSelected.img !=null" src="{{subMealsSelected.img}}">
+                  <img *ngIf="subMealsSelected.img == null" src="../assets/img/test.png">
+              </ion-avatar>
+              <h2>{{subMealsSelected.name}}</h2>
+              <p>{{subMealsSelected.serving_size}}</p>
+          </ion-item>
+        </span>
     </ion-item>
   </ion-list>
 </ion-content>

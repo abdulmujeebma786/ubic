@@ -42,20 +42,31 @@
         </ion-row>
 
         <ion-row class="radio-row" padding-top>
-            <ion-col col-5 center> <span class="text-A">Medical Condetions</span></ion-col>
+            <!--<ion-col col-5 center> <span class="text-A">Medical Condetions</span></ion-col>
             <ion-col col-5 class="input-styles">
                 <ion-input type="text" readonly [(ngModel)]="Bodydetails.medicalCondetions" (click)="openPop()"></ion-input>
-            </ion-col>
+            </ion-col>-->
+            <ion-item>
+                <ion-label>Medical Condetions</ion-label>
+                <ion-select [(ngModel)]="Bodydetails.medicalCondetions" multiple="true">
+                    <ion-option Value="1">Bacon</ion-option>
+                    <ion-option value="2">Black Olives</ion-option>
+                    <ion-option value="2">Extra Cheese</ion-option>
+                    <ion-option value="2"> Mushrooms</ion-option>
+                    <ion-option value="2">Pepperoni</ion-option>
+                    <ion-option value="2">Sausage</ion-option>
+                </ion-select>
+                </ion-item>
         </ion-row>
 
         <div class="ranger-div-body">
             <span class="text-A">Physical Activity Level:</span>
             <ion-segment [(ngModel)]="Bodydetails.userlevel">
-                <ion-segment-button  value="1">1</ion-segment-button>
-                <ion-segment-button value="2">2</ion-segment-button>
-                <ion-segment-button value="3">3</ion-segment-button>
-                <ion-segment-button value="4">4</ion-segment-button>
-                 <ion-segment-button value="5">5</ion-segment-button>
+                <ion-segment-button class="seg1"  value="1">1</ion-segment-button>
+                <ion-segment-button class="seg2" value="2">2</ion-segment-button>
+                <ion-segment-button class="seg3" value="3">3</ion-segment-button>
+                <ion-segment-button class="seg4" value="4">4</ion-segment-button>
+                 <ion-segment-button class="seg5" value="5">5</ion-segment-button>
             </ion-segment>
         </div>
     </ion-grid>

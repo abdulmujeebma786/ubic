@@ -69,27 +69,34 @@ td, th{
 
 .main-content .meals-planned {
     
-    padding: 30px 0px 0px 20px;
-    font-size: 18px;
+    padding: 14px 0px 0px 20px;
+    font-size: 16px;
 }
 
-.main-content .diet-planned{
-     padding: 8px 0px 0px 21px;
-    font-size: 18px;
+.main-content .diet-planned {
+     padding: 0px 0px 0px 21px;
+    font-size: 16px;
 }
 
-.sub-content .col1 {
-    margin: 22px;
-    border-right: 1px solid;
-}
-.sub-content .col2 {
-    margin: 22px;
+.sub-content .col1, .sub-content .col2 {
+    padding: 22px;
+    box-shadow: 0px 0px 6px #bdb9b9;
+    text-align: center;
 }
 
+.sub-content span {
+        font-size: 21px;
+    font-weight: bold;
+}
 
-// .home-page .progress-bar {
-
+// .sub-content .col1 {
+//     margin: 22px;
+//     border-right: 1px solid;
 // }
+// .sub-content .col2 {
+//     margin: 22px;
+// }
+
 
  
     .home-page .progress-outer {

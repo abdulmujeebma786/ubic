@@ -43,10 +43,11 @@ export class LoginPage {
             this._commonservice.httpPostMethodCall('userlogin',data). subscribe(
 			response => {
 				if(response.status){
-                    localStorage.setItem("userData",response.data);
+                    localStorage.setItem("userData",JSON.stringify(response.data));
                     if(response.bodyStatus == false){
                         this.navCtrl.push(GoalPage);
                     }else {
+                        localStorage.setItem("Calory_Diet",'set');
                         this.navCtrl.push(HomePage);
                     }
                 }else{

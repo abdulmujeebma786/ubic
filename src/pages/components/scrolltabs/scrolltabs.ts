@@ -70,7 +70,7 @@ export class ScrollTabsComponent implements OnChanges {
       } else if (pos === 0) {
         scrollTo = 0;
       }
-      this.scroll.scrollElement.scrollLeft = scrollTo;
+      // this.scroll.scrollElement.scrollLeft = scrollTo;
       this.onSelectedTab.emit({ selectedTab: tab });
     }, 150);
   }

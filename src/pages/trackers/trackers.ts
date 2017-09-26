@@ -2,9 +2,9 @@
  * Created by ubic on 15/04/17.
  */
 import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Chart } from 'chart.js';
-
+import { newTrack } from './newtrack/newTrack';
 
 @Component({
     selector: 'trackers',
@@ -16,14 +16,11 @@ export class TrackersPage {
 
     lineChart: any;
  
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, public modalCtrl : ModalController ) {
  
     }
  
     ionViewDidLoad() {
- 
-       
- 
         
         this.lineChart = new Chart(this.lineCanvas.nativeElement, {
  
@@ -58,6 +55,11 @@ export class TrackersPage {
  
         });
  
+    }
+
+    addtrack(){
+        let modal = this.modalCtrl.create(newTrack);
+        modal.present();
     }
  
  

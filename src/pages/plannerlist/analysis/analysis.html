@@ -12,14 +12,36 @@
     
 <ion-item-divider align="center" class="divider-header">MEAL BREAKDOWN</ion-item-divider>
 
-<ion-grid>
+<!--<ion-grid>
     <ion-row>
         <ion-col>Fiber</ion-col>
-        <ion-col><div class="progress-outer">
-      <div class="progress-inner" [style.width]="progress + '%'">
-          {{progress}}%
-      </div>
-  </div></ion-col>
+        <ion-col>
+            <div class="progress-outer">
+                <div class="progress-inner" [style.width]="progress + '%'">
+                    {{progress}}%
+                </div>
+            </div>
+        </ion-col>
         <ion-col></ion-col>
     </ion-row>
-</ion-grid>
+</ion-grid>-->
+
+
+<ion-list>
+    <ion-item padding class="subMealItem" (click)="goTofoodList(item)">
+      <ion-icon  item-right name="ios-arrow-forward"></ion-icon>
+        <h2>AAA</h2>
+    </ion-item>
+    <ion-item padding class="subMealItem" (click)="goTofoodList(item)">
+      <ion-icon  item-right name="ios-arrow-forward"></ion-icon>
+        <h2>AAA</h2>
+    </ion-item>
+    <ion-item padding  class="subMealItem" (click)="goTofoodList(item)">
+      <ion-icon  item-right name="ios-arrow-forward"></ion-icon>
+        <h2>AAA</h2>
+    </ion-item>
+    <ion-item padding  class="subMealItem" (click)="goTofoodList(item)">
+      <ion-icon  item-right name="ios-arrow-forward"></ion-icon>
+        <h2>AAA</h2>
+    </ion-item>
+  </ion-list>

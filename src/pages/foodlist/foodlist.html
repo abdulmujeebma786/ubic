@@ -17,33 +17,30 @@
                 <img src="{{item.img}}" *ngIf="item.img != null">
                 <img src="{{emptyImagepath}}" *ngIf="item.img == null">
             </ion-avatar>
-            <h1>{{item.name}} </h1>
+            <h2>{{item.name}} </h2>
             <ion-grid>
               <ion-row >
                   <ion-col >{{item.types[0].quantity}}</ion-col>
                   <ion-col >{{item.types[0].serving_size}}</ion-col>
-                  <ion-col>
-                    <ion-icon align="right" *ngIf="!item.status" class="arrow-icon" ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
-                    <ion-icon align="right" *ngIf="item.status" class="arrow-icon" ios="ios-arrow-up" md="md-arrow-up"></ion-icon>
-                  </ion-col>
-              
               </ion-row>
             </ion-grid>
           </ion-item>
-          <!--Sub Content if show when item.status is true-->
-        <ion-item *ngIf="item.status" class="subContentList">
-          <ion-grid>
-              <ion-row>
-                  <ion-col *ngFor ="let subItem of item.types">
-                      <span>
-                        <img src="{{subItem.image}}" *ngIf="subItem.image !==null">
-                        <img src="{{emptyImagepath}}" *ngIf="subItem.image ===null">
-                      </span><br>
-                      <span align="center">{{subItem.quantity}}</span>
-                  </ion-col>
-              </ion-row>
-          </ion-grid>
-        </ion-item>
+        <span *ngIf="item.status" >
+            <ion-row align="center" class="food-text">
+              <ion-col width-33 class="texts">Quantity</ion-col>
+              <ion-col width-33 *ngFor="let subItem of item.types ; let j = index"  [class.actives]="j == selectedRow" (click)="selectFood(subItem,i,j)">
+                <p>{{subItem.quantity}}</p>
+              </ion-col>
+            </ion-row>
+              
+            <ion-row align="center" class="food-image">
+              <ion-col width-33 class="texts">Serving Size</ion-col>
+              <ion-col width-33 *ngFor="let subItem of item.types ; let j = index" [class.actives]="j == selectedRow" (click)="selectFood(subItem,i,j)">
+                <img  src="{{subItem.image}}" *ngIf="subItem.image !==null">
+                <img src="{{emptyImagepath}}" *ngIf="subItem.image ===null">
+              </ion-col>
+            </ion-row>
+        </span>
    </span>
     </ion-list>
 </ion-content>

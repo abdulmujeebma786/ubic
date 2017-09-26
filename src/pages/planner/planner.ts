@@ -2,12 +2,12 @@
  * Created by ubic on 23/04/17.
  */
 import { Component } from '@angular/core';
-import { ModalController, NavController, Platform, ViewController } from 'ionic-angular';
+import { NavController, ViewController, NavParams } from 'ionic-angular';
 import { PlannerListPage } from '../../pages/plannerlist/plannerlist';
 import { CommonService } from '../services/common.service';
 import { SharedService } from '../services/shared.service';
-import { CONSTANTS } from '../services/config.service';
-import * as moment from 'moment';
+// import { CONSTANTS } from '../services/config.service';
+// import * as moment from 'moment';
 import * as _ from 'lodash';
 
 @Component({
@@ -15,19 +15,23 @@ import * as _ from 'lodash';
     templateUrl: 'planner.html'
 })
 export class PlannerPage {
-    progress = 70;
-    calorieInMeal = 20;
+    calorieProgress = 0;
     plannerData = JSON.parse(localStorage.getItem("planner"));
-    
-    
-    constructor(public navCtrl: NavController,public viewCtrl : ViewController, public _commonService : CommonService, public SharedService:SharedService) {
+    calorieDiet: number;
+    selectedArray = JSON.parse(localStorage.getItem("selectedArray"));
+    calorieAdded = 0;
+    calorieLeft = 0;
+    constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public _commonService: CommonService, public SharedService: SharedService) {
 
         // this.getData()
+        // this.
         this.plannerData = JSON.parse(localStorage.getItem("planner"));
-        
+        this.calorieDiet = parseInt(navParams.get('diet'));
+
+
     }
 
-    getData(){
+    getData() {
         // this._commonService.httpGetMethodCallOData('meals'). subscribe(
         //         response => {
         //             console.log(response);
@@ -38,12 +42,36 @@ export class PlannerPage {
         // );
     }
 
-    goToPlannerList(item){
-        var index = _.findIndex(this.plannerData, { 'id': item.id});
-        this.navCtrl.push(PlannerListPage,{index:index, length:item.selected.length});
+    goToPlannerList(item, index) {
+        // var index = _.findIndex(this.plannerData, { 'id': item.id });
+        this.navCtrl.push(PlannerListPage, { index: index, calorieDiet: this.calorieDiet });
     }
 
     dismiss() {
         this.viewCtrl.dismiss();
+    }
+
+    initialCalculation() {
+        var calorieAdded = 0;
+        _.forEach(this.selectedArray, function (value) {
+
+            calorieAdded = Math.round(calorieAdded + parseInt(value.calorie));
+        });
+        this.calorieAdded = calorieAdded
+        this.calorieLeft = (this.calorieDiet - this.calorieAdded);
+        this.calorieProgress = Math.round((this.calorieAdded / this.calorieDiet) * 100);
+    }
+
+    ionViewWillEnter() {
+        this.selectedArray = JSON.parse(localStorage.getItem("selectedArray"));
+        if (this.selectedArray) {
+            this.initialCalculation();
+        }
+    }
+
+    ngOnInit() {
+
+
+
     }
 }
