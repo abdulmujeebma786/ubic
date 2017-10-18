@@ -1,26 +1,30 @@
 <ion-header class="medical-model">
     <ion-toolbar>
         <ion-title>
-            Add New Track
+           TODAY'S STATUS
         </ion-title>
         <ion-buttons start>
             <button ion-button (click)="dismiss()">
                 <span ion-text color="primary" showWhen="ios">Cancel</span>
-                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+                <ion-icon name="md-close"></ion-icon>
             </button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-grid>
-    <ion-row>
-        <ion-col>
-        1 of 2
-        </ion-col>
-        <ion-col>
-        2 of 2
-        </ion-col>
-    </ion-row>
-    </ion-grid>
+<ion-content class="new_track">
+    <ion-list padding>
+        <ion-item>
+            <ion-label floating>Fat</ion-label>
+            <ion-input [(ngModel)]="fat" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Weight</ion-label>
+            <ion-input type="number" [(ngModel)]="weight"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div align="center">
+        <button ion-button class="submit-button" (click)="save()" >Save</button>
+    </div>
 </ion-content>

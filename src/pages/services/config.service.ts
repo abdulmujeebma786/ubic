@@ -28,5 +28,8 @@ export const CONSTANTS = {
             coachTypeSpecial:'specialEvent',
             coachTypeRegular:'regular',
             specialevent:'You are on the Special Events program',
-            selectionOver:'You exceeded your calorie'
+            selectionOver:'You exceeded your calorie',
+            EmptyFat:'Please enter your fat',
+            EmptyWeight:'Please enter your weight',
+            succesUpdation:'Successfully saved your data'
 }

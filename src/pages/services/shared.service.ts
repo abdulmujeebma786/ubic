@@ -107,6 +107,7 @@ export class SharedService {
                             break;
 
                     }
+                    localStorage.setItem('meal',orientation);
                     localStorage.setItem("planner",JSON.stringify(this.data));
                     var array =[];
                     localStorage.setItem("selectedArray",JSON.stringify(array));

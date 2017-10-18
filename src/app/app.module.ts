@@ -28,8 +28,6 @@ import { FoodListPage } from '../pages/foodlist/foodlist';
 import { AnalysisPage } from '../pages/plannerlist/analysis/analysis';
 import { ScrollTabsComponent } from '../pages/components/scrolltabs';
 import { newTrack } from '../pages/trackers/newtrack/newTrack'
-
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -60,7 +58,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage, SignupPage,
     forgetPasswordPage, GoalPage, TargetPage, BodyDetails, MedicalCondetions,SpecialPromoModel,
     Results, ProgrameOverviewPage, SpecialEventPage, SettingsPage, TrackersPage, PlannerPage,
-    PlannerListPage, FoodListPage, AnalysisPage
+    PlannerListPage, FoodListPage, AnalysisPage, newTrack
   ],
   providers: [
     StatusBar,

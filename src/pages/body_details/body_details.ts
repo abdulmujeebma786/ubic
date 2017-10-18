@@ -3,7 +3,6 @@
  */
 import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams } from 'ionic-angular';
-// import { NgClass } from 'angular2/common';
 import { Results } from '../results/results';
 import { MedicalCondetions } from '../medical_condetions/medical_condetions';
 import { CommonService } from '../services/common.service';

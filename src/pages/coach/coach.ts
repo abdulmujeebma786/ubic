@@ -35,6 +35,7 @@ export class CoachPage {
         this.homeData = response.data;
         this.specialData = response.specialData;
         localStorage.setItem("Calory_Diet",this.homeData.body_calory_diet);
+        localStorage.setItem('orientation',this.homeData.body_orientation)
         if (response.status) {
 
         }

@@ -5,6 +5,9 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { newTrack } from './newtrack/newTrack';
+import { CommonService } from '../services/common.service';
+import { SharedService } from '../services/shared.service';
+import { CONSTANTS } from '../services/config.service';
 
 @Component({
     selector: 'trackers',
@@ -13,10 +16,11 @@ import { newTrack } from './newtrack/newTrack';
 export class TrackersPage {
 
     @ViewChild('lineCanvas') lineCanvas;
-
+    userData = JSON.parse(localStorage.getItem("userData"));
     lineChart: any;
+    trackdata:'';
  
-    constructor(public navCtrl: NavController, public modalCtrl : ModalController ) {
+    constructor(public navCtrl: NavController, public modalCtrl : ModalController, public _commonService: CommonService, public SharedService: SharedService ) {
  
     }
  
@@ -60,6 +64,22 @@ export class TrackersPage {
     addtrack(){
         let modal = this.modalCtrl.create(newTrack);
         modal.present();
+    }
+
+    ngOnInit(){
+        // getTrackers
+        
+        this._commonService.httpPostMethodCall('getTrackers', {userid :this.userData.user_id}).subscribe(
+        response => {
+            if(response){
+                // this.SharedService.alertFunction(CONSTANTS.succesUpdation);
+                
+            }
+            
+        },
+        error => {
+            this.SharedService.errorHandling(error);
+        });
     }
  
  

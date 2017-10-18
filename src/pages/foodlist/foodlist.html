@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -8,10 +7,10 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="nutrition-food-list">
-<scroll-tabs #scrollTab [tabs]="tabs" (onSelectedTab)="tabChange($event)"></scroll-tabs>
+  <scroll-tabs #scrollTab [tabs]="tabs" (onSelectedTab)="tabChange($event)"></scroll-tabs>
 
- <ion-list>
-   <span *ngFor="let item of selectedList let i = index" [attr.data-index]="i">
+  <ion-list>
+    <span  *ngFor="let item of selectedList let i = index" [attr.data-index]="i">
         <ion-item (click)="toggleDiv(i)" class="item-main" >
             <ion-avatar item-left>
                 <img src="{{item.img}}" *ngIf="item.img != null">
@@ -41,6 +40,7 @@
               </ion-col>
             </ion-row>
         </span>
-   </span>
-    </ion-list>
+    </span>
+    <h3 *ngIf="selectedList.length == 0" align="center">No Food Available</h3>
+  </ion-list>
 </ion-content>

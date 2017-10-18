@@ -71,7 +71,9 @@ export class PlannerPage {
 
     ngOnInit() {
 
+    }
 
-
+    submitdata(){
+        
     }
 }

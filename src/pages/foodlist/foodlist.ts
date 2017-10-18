@@ -88,7 +88,7 @@ export class FoodListPage {
     var subPlannerId = this.subPlannerId
     _.forEach(this.selectedArray, function (value) {
       if (value.plannerid == plannerId) {
-        if(value.subplannerid != subPlannerId){
+        if (value.subplannerid != subPlannerId) {
           calorieAdded += Math.round(calorieAdded + parseInt(value.calorie));
         }
       }
@@ -145,9 +145,9 @@ export class FoodListPage {
           //   newArray.push(selectedDatas)
           // }
           if (value.plannerid == plannerId && value.subplannerid == subPlannerId) {
-            
+
             // if (value.quantity != selectedDatas.quantity || value.serving_size != selectedDatas.serving_size) {
-              newArray.push(selectedDatas)
+            newArray.push(selectedDatas)
             // }else {
 
             // }
@@ -166,33 +166,40 @@ export class FoodListPage {
     this.index1 = this.navParams.get('index1');
     this.plannerId = this.navParams.get('plannerId');
     this.subPlannerId = this.navParams.get('subPlannerId');
-    // var plan1 = this.navParams.get('plan1');
-    // var plan2 = this.navParams.get('plan2');
-    // var type = this.navParams.get('type');
-    // var dietPercentage = this.navParams.get('dietPercentage');
-    //   var userData = JSON.parse(localStorage.getItem("userData"));
+    var plan1 = this.navParams.get('plan1');
+    var plan2 = this.navParams.get('plan2');
+    var type = this.navParams.get('type');
+    var dietPercentage = this.navParams.get('dietPercentage');
+    var userData = JSON.parse(localStorage.getItem("userData"));
+    var orientation = localStorage.getItem('orientation');
+
     if (this.subPlannerId == 8 || this.subPlannerId == 9) {
       var subId = 2;
     } else {
       var subId = this.subPlannerId;
     }
-    // userData.user_id
-    var data = {
-      user_id: 4,
-      orientation: 1,
-      location: 1,
-      meal: 4,
-      sub_meal: 1,
-      calorie1: 10,
-      calorie2: 1000000
-    }
 
+    var data = {
+      user_id: userData.user_id,
+      orientation: 1,
+      location: userData.user_location,
+      meal: this.plannerId,
+      sub_meal: this.subPlannerId,
+      calorie1: plan1,
+      calorie2: plan2
+    }
+    this.selectedList = [];
     this._commonService.httpPostMethodAdmin('user_foods', data).subscribe(
       response => {
         console.log(response)
         this.tabs = response;
         this.selectedTab = response[0];
-        this.selectedList = response[0].item;
+        if (response.length > 0) {
+          this.selectedList = response[0].item;
+        } else {
+          this.selectedList = [];
+        }
+
       },
       error => {
         this.SharedService.errorHandling(error);

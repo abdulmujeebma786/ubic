@@ -47,19 +47,11 @@
                         </ion-item>
                         </span>
                     </ion-list>
-
-                    <!--<ion-list class="planner-list" *ngIf="item.type =='snack'">
-                        <ion-item  *ngFor="let sub_meals of item.selected" >
-                            <ion-avatar item-left>
-                                <img src="../assets/img/test.png">
-                            </ion-avatar>
-                            <h2>Cher</h2>
-                            <p>Ugh. As if.</p>
-                        </ion-item>
-                    </ion-list>-->
-
                 </div>
             </li>
         </ul>
+    </div>
+    <div align="center">
+        <button ion-button class="submit-button" (click)="submitdata()" >Submit</button>
     </div>
 </ion-content>

@@ -101,7 +101,7 @@ export class HomePage {
     ngOnInit(){
 
         var userData = JSON.parse(localStorage.getItem("userData"));
-        userData.user_id = 6;
+        // userData.user_id = 6;
         this._commonService.httpPostMethodCall('getHomedata', { 'userid': userData.user_id }).subscribe(
         response => {
             console.log(response);
